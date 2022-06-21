@@ -3,11 +3,11 @@
     --font-headline: 'Cinzel', serif;
     --font-emphasis: 'Alegreya Sans SC', sans-serif;
     /* colors */
-    --primary-color: #2B2D42;
-    --secondary-color: #D90429;
-    --tertiary-color: #EF233C;
-    --light-grey: #8D99AE;
-    --white: #EDF2F4;
+    --primary-color: #0A0908;
+    --secondary-color: #5E503F;
+    --tertiary-color: #A9927D;
+    --light-grey: #22333B;
+    --white: #F2F4F3;
   
     /* sizes */
     --font-base: 18px;
