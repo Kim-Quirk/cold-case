@@ -1,0 +1,64 @@
+:root {
+    --font-body: 'Source Sans Pro', sans-serif;
+    --font-headline: 'Cinzel', serif;
+    --font-emphasis: 'Alegreya Sans SC', sans-serif;
+    /* colors */
+    --primary-color: #284B63;
+    --secondary-color: #353535;
+    --tertiary-color: #3C6E71;
+    --light-grey: #D9D9D9;
+    --white: #f3f6fa;
+  
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+  }
+
+  body {
+    background-color: var(--white);
+    margin: 0;
+  }
+
+  main {
+    border-bottom: 2px solid var(--secondary-color);
+    border-top: 2px solid var(--secondary-color);
+    margin: 1rem;
+    font-family: var(--font-body);
+    font-size: var(--font-base);
+    min-height: 73vh;
+  }
+
+  h1 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-family: var(--font-emphasis);
+    color: var(--secondary-color);
+  }
+
+  h3.hightlight {
+    color: var(--tertiary-color);
+  }
+
+  header, footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem .5rem;
+    font-family: var(--font-emphasis);
+    font-size: var(--large-font);
+  }
+
+  p.color1 {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem .5rem;
+  }
+
+  p.color2 {
+    background-color: var(--tertiary-color);
+    color: var(--white);
+    padding: 1rem .5rem;
+  }
