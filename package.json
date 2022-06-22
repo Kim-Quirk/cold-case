@@ -1,0 +1,24 @@
+{
+  "name": "cold-cases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kim-Quirk/cold-case.git"
+  },
+  "author": "Kim, Avie, and Moon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kim-Quirk/cold-case/issues"
+  },
+  "homepage": "https://github.com/Kim-Quirk/cold-case#readme",
+  "dependencies": {
+    "snowpack": "^3.8.8"
+  }
+}

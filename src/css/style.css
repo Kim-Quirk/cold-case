@@ -15,6 +15,7 @@
     --large-font: 1.2em;
   }
 
+  /* Mobile first design! Code here is for mobile screens. */
   body {
     background-color: var(--white);
     margin: 0;
@@ -46,7 +47,7 @@
   header, footer {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 1rem .5rem;
+    /* padding: 1rem .5rem; */
     font-family: var(--font-emphasis);
     font-size: var(--large-font);
   }
@@ -61,4 +62,86 @@
     background-color: var(--tertiary-color);
     color: var(--white);
     padding: 1rem .5rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* Navigation styles */
+  ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* background-color: #f1f1f1; */
+  }
+  
+  li a {
+    display: block;
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  li a.active {
+    background-color: var(--light-grey);
+    color: white;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }
+  /* End Navigation styles */
+
+  /* Game board styles */
+
+  .board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    margin: 1rem 0;
+  }
+
+  /* End game board styles */
+
+  /* Card styles */
+  .card {
+    max-width: 110px;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+  }
+
+  .card h3, .card h5, .card h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 80%;
+  }
+
+  .card h6 {
+    font-size: 60%;
+  }
+
+  .card img {
+    max-width: 75px;
+    display: block;
+    margin: 5px auto;
+  }
+
+  .card p {
+    font-size: 40%;
+    margin: 5px auto;
+  }
+
+  /* End Card styles */
+
+  /* Large Screens */
+  @media screen and (min-width: 500px) {
+    body {
+      background-color: rgb(163, 230, 168);
+    }
   }
