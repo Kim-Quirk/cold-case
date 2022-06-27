@@ -3,11 +3,23 @@
   --font-headline: 'Cinzel', serif;
   --font-emphasis: 'Alegreya Sans SC', sans-serif;
   /* colors */
-  --primary-color: #0A0908;
+  --primary-color: #353535;
+  --secondary-color: #3C6E71;
+  --tertiary-color: #2e3758;
+  --light-grey: #D9D9D9;
+  --white: #ebeaed;
+  /* colors */
+  /* --primary-color: #3a2b42;
+  --secondary-color: #b9011f;
+  --tertiary-color: #EF233C;
+  --light-grey: #ae968d;
+  --white: #faf7f7; */
+  /* colors */
+  /* --primary-color: #0A0908;
   --secondary-color: #5E503F;
   --tertiary-color: #A9927D;
   --light-grey: #22333B;
-  --white: #F2F4F3;
+  --white: #F2F4F3; */
 
   /* sizes */
   --font-base: 18px;
@@ -33,6 +45,7 @@ main {
 h1 {
   font-family: var(--font-headline);
   font-weight: 700;
+  color: var(--tertiary-color);
 }
 
 h3 {
@@ -75,7 +88,6 @@ ul.nav {
   margin: 0;
   padding: 0;
   width: 100%;
-  /* background-color: #f1f1f1; */
 }
 
 li a {
@@ -86,7 +98,7 @@ li a {
 }
 
 li a.active {
-  background-color: var(--light-grey);
+  background-color: var(--tertiary-color);
   color: white;
 }
 
@@ -155,11 +167,14 @@ li a:hover:not(.active) {
   position: absolute;
   bottom: -10px;
   transition: .5s ease;
-  opacity: 1;
 }
 
-.card:hover .overlay {
+.hide {
   opacity: 0;
+}
+
+.card {
+  cursor: pointer;
 }
 
 /* End Card styles */
@@ -180,19 +195,8 @@ li a:hover:not(.active) {
 
   li a {
     display: block;
-    color: var(--white);
     padding: 8px 16px;
     text-decoration: none;
-  }
-
-  li a.active {
-    background-color: var(--light-grey);
-    color: white;
-  }
-
-  li a:hover:not(.active) {
-    background-color: var(--secondary-color);
-    color: var(--white);
   }
 
   /* End Navigation styles */
@@ -211,6 +215,24 @@ li a:hover:not(.active) {
 /*Leaderboard Styles*/
 .scoreArea{
   display: flex;
+}
+.scoreArea h1{
+  text-align: center;
+}
+.scoreArea section{
+  padding: 1rem;
+  margin: .5rem auto;
+}
+.scoreDate, .user, .score{
+  margin-left: 2rem;
+}
+td{
+  text-align: center;
+  padding: 0 1rem;
+}
+.score{
+  color:var(--secondary-color);
+  font-weight: 900;
 }
 /* Large Screens */
 @media screen and (min-width: 850px) {

@@ -6,7 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCC | Memory Game</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/main.js" type="module"></script>
+    <template id="card-template">
+      <div class="card">
+        <div class="card_information">
+          <h3 class="text-center" id="case-type">Missing Person</h3>
+          <img
+            id="profile"
+            src="./img/placeholder.png"
+            alt="placeholder image"
+          />
+          <h5 class="text-center" id="victim-name"></h5>
+          <p class="summary"></p>
+          <h6 class="text-center" id="website"></h6>
+        </div>
+        <div class="overlay">
+          <img id="card-background" src="./img/card.jpg" />
+        </div>
+      </div>
+    </template>
+    <script src="./js/game.js" type="module"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,94 +40,28 @@
     <main>
       <h1>Cold Case Cards: Memory Game</h1>
       <div class="board">
-        <div class="card">
-            <div class="card_information">
-              <h3 class="text-center">Missing Person</h3>
-              <img
-                id="profile"
-                src="./img/placeholder.png"
-                alt="placeholder image"
-              />
-              <h5 class="text-center">John Doe</h5>
-              <p class="summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-  
-              <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-            </div>
-            <div class="overlay">
-              <img id="card-background" src="./img/card.jpg" />
-            </div>
+        <!-- <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
           </div>
-          <div class="card">
-              <div class="card_information">
-                <h3 class="text-center">Missing Person</h3>
-                <img
-                  id="profile"
-                  src="./img/placeholder.png"
-                  alt="placeholder image"
-                />
-                <h5 class="text-center">John Doe</h5>
-                <p class="summary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.
-                </p>
-    
-                <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-              </div>
-              <div class="overlay">
-                <img id="card-background" src="./img/card.jpg" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="card_information">
-                <h3 class="text-center">Missing Person</h3>
-                <img
-                  id="profile"
-                  src="./img/placeholder.png"
-                  alt="placeholder image"
-                />
-                <h5 class="text-center">John Doe</h5>
-                <p class="summary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.
-                </p>
-    
-                <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-              </div>
-              <div class="overlay">
-                <img id="card-background" src="./img/card.jpg" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="card_information">
-                <h3 class="text-center">Missing Person</h3>
-                <img
-                  id="profile"
-                  src="./img/placeholder.png"
-                  alt="placeholder image"
-                />
-                <h5 class="text-center">John Doe</h5>
-                <p class="summary">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                  nisi ut aliquip ex ea commodo consequat.
-                </p>
-    
-                <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-              </div>
-              <div class="overlay">
-                <img id="card-background" src="./img/card.jpg" />
-              </div>
-            </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div>
         <div class="card">
           <div class="card_information">
             <h3 class="text-center">Missing Person</h3>
@@ -133,71 +85,137 @@
           </div>
         </div>
         <div class="card">
-            <div class="card_information">
-              <h3 class="text-center">Missing Person</h3>
-              <img
-                id="profile"
-                src="./img/placeholder.png"
-                alt="placeholder image"
-              />
-              <h5 class="text-center">John Doe</h5>
-              <p class="summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-  
-              <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-            </div>
-            <div class="overlay">
-              <img id="card-background" src="./img/card.jpg" />
-            </div>
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
           </div>
-          <div class="card">
-            <div class="card_information">
-              <h3 class="text-center">Missing Person</h3>
-              <img
-                id="profile"
-                src="./img/placeholder.png"
-                alt="placeholder image"
-              />
-              <h5 class="text-center">John Doe</h5>
-              <p class="summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-  
-              <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-            </div>
-            <div class="overlay">
-              <img id="card-background" src="./img/card.jpg" />
-            </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
           </div>
-          <div class="card">
-            <div class="card_information">
-              <h3 class="text-center">Missing Person</h3>
-              <img
-                id="profile"
-                src="./img/placeholder.png"
-                alt="placeholder image"
-              />
-              <h5 class="text-center">John Doe</h5>
-              <p class="summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-  
-              <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
-            </div>
-            <div class="overlay">
-              <img id="card-background" src="./img/card.jpg" />
-            </div>
+        </div>
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
           </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
+          </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
+          </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
+          </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center">Missing Person</h3>
+            <img
+              id="profile"
+              src="./img/placeholder.png"
+              alt="placeholder image"
+            />
+            <h5 class="text-center">John Doe</h5>
+            <p class="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h6 class="text-center"><a href="/">OrganizationWebsite.com</a></h6>
+          </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg" />
+          </div>
+        </div> -->
       </div>
     </main>
     <!-- The footer is in the partials folder. -->
