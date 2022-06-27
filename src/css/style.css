@@ -1,72 +1,188 @@
 :root {
-    --font-body: 'Source Sans Pro', sans-serif;
-    --font-headline: 'Cinzel', serif;
-    --font-emphasis: 'Alegreya Sans SC', sans-serif;
-    /* colors */
-    --primary-color: #0A0908;
-    --secondary-color: #5E503F;
-    --tertiary-color: #A9927D;
-    --light-grey: #22333B;
-    --white: #F2F4F3;
-  
-    /* sizes */
-    --font-base: 18px;
-    --small-font: 0.8em;
-    --large-font: 1.2em;
-  }
+  --font-body: 'Source Sans Pro', sans-serif;
+  --font-headline: 'Cinzel', serif;
+  --font-emphasis: 'Alegreya Sans SC', sans-serif;
+  /* colors */
+  --primary-color: #353535;
+  --secondary-color: #3C6E71;
+  --tertiary-color: #2e3758;
+  --light-grey: #D9D9D9;
+  --white: #ebeaed;
+  /* colors */
+  /* --primary-color: #3a2b42;
+  --secondary-color: #b9011f;
+  --tertiary-color: #EF233C;
+  --light-grey: #ae968d;
+  --white: #faf7f7; */
+  /* colors */
+  /* --primary-color: #0A0908;
+  --secondary-color: #5E503F;
+  --tertiary-color: #A9927D;
+  --light-grey: #22333B;
+  --white: #F2F4F3; */
 
-  /* Mobile first design! Code here is for mobile screens. */
-  body {
-    background-color: var(--white);
-    margin: 0;
-  }
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
 
-  main {
-    border-bottom: 2px solid var(--secondary-color);
-    border-top: 2px solid var(--secondary-color);
-    margin: 1rem;
-    font-family: var(--font-body);
-    font-size: var(--font-base);
-    min-height: 73vh;
-  }
+/* Mobile first design! Code here is for mobile screens. */
+body {
+  background-color: var(--white);
+  margin: 0;
+}
 
-  h1 {
-    font-family: var(--font-headline);
-    font-weight: 700;
-  }
+main {
+  border-bottom: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+  margin: .3rem;
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  min-height: 73vh;
+}
 
-  h3 {
-    font-family: var(--font-emphasis);
-    color: var(--secondary-color);
-  }
+h1 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  color: var(--tertiary-color);
+}
 
-  h3.hightlight {
-    color: var(--tertiary-color);
-  }
+h3 {
+  font-family: var(--font-emphasis);
+  color: var(--secondary-color);
+}
 
-  header, footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    /* padding: 1rem .5rem; */
-    font-family: var(--font-emphasis);
-    font-size: var(--large-font);
-  }
+h3.hightlight {
+  color: var(--tertiary-color);
+}
 
-  p.color1 {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 1rem .5rem;
-  }
+header,
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  /* padding: 1rem .5rem; */
+  font-family: var(--font-emphasis);
+  font-size: var(--large-font);
+}
 
-  p.color2 {
-    background-color: var(--tertiary-color);
-    color: var(--white);
-    padding: 1rem .5rem;
-  }
+p.color1 {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem .5rem;
+}
 
-  .text-center {
-    text-align: center;
-  }
+p.color2 {
+  background-color: var(--tertiary-color);
+  color: var(--white);
+  padding: 1rem .5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Navigation styles */
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li a {
+  display: block;
+  color: var(--white);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/* End Navigation styles */
+
+/* Game board styles */
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .1rem;
+  align-items: center;
+  justify-items: center;
+  margin: 1rem 0;
+}
+
+/* End game board styles */
+
+/* Card styles */
+.card {
+  max-width: 110px;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.card_information {
+  padding: 5px;
+}
+
+.card h3,
+.card h5,
+.card h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 80%;
+}
+
+.card h6 {
+  font-size: 50%;
+}
+
+#profile {
+  max-width: 75px;
+  display: block;
+  margin: 5px auto;
+}
+
+.card p {
+  display: none;
+  text-align: justify;
+}
+
+#card-background {
+  width: 180%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: -10px;
+  transition: .5s ease;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.card {
+  cursor: pointer;
+}
+
+/* End Card styles */
+
+/* End Small Screens */
+
+/* Medium Screens */
+@media screen and (min-width: 400px) {
 
   /* Navigation styles */
   ul.nav {
@@ -76,72 +192,88 @@
     width: 100%;
     /* background-color: #f1f1f1; */
   }
-  
+
   li a {
     display: block;
-    color: var(--white);
     padding: 8px 16px;
     text-decoration: none;
   }
-  
-  li a.active {
-    background-color: var(--light-grey);
-    color: white;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: var(--secondary-color);
-    color: var(--white);
-  }
+
   /* End Navigation styles */
+
+  /* Game board styles */
+  .board {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .2rem;
+  }
+
+  /* End Game board styles */
+}
+
+/* End Medium Screens */
+
+/*Leaderboard Styles*/
+.scoreArea{
+  display: flex;
+}
+.scoreArea h1{
+  text-align: center;
+}
+.scoreArea section{
+  padding: 1rem;
+  margin: .5rem auto;
+}
+.scoreDate, .user, .score{
+  margin-left: 2rem;
+}
+td{
+  text-align: center;
+  padding: 0 1rem;
+}
+.score{
+  color:var(--secondary-color);
+  font-weight: 900;
+}
+/* Large Screens */
+@media screen and (min-width: 850px) {
+  body {
+    background-color: rgb(163, 230, 168);
+  }
+
+  main {
+    margin: 1rem;
+  }
 
   /* Game board styles */
 
   .board {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    align-items: center;
-    justify-items: center;
-    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+ gap: .2rem;
   }
 
   /* End game board styles */
 
   /* Card styles */
   .card {
-    max-width: 110px;
-    border-radius: 5px;
-    border: 2px solid var(--primary-color);
-    padding: 5px;
-  }
-
-  .card h3, .card h5, .card h6 {
-    margin: 0;
+    max-width: 12rem;
     padding: 0;
-    font-size: 80%;
+    font-size: 110%;
   }
 
   .card h6 {
-    font-size: 60%;
+    font-size: 55%;
   }
 
-  .card img {
-    max-width: 75px;
+  #profile {
+    max-width: 5.5rem;
     display: block;
     margin: 5px auto;
   }
 
   .card p {
-    font-size: 40%;
+    font-size: 70%;
     margin: 5px auto;
+    display: block;
   }
-
-  /* End Card styles */
-
-  /* Large Screens */
-  @media screen and (min-width: 500px) {
-    body {
-      background-color: rgb(163, 230, 168);
-    }
-  }
+}
+  /* End Large Screen */
