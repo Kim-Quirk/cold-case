@@ -90,7 +90,7 @@ ul.nav {
   width: 100%;
 }
 
-li a {
+.nav li a {
   display: block;
   color: var(--white);
   padding: 8px 16px;
@@ -179,6 +179,30 @@ li a:hover:not(.active) {
 
 /* End Card styles */
 
+/*Leaderboard Styles*/
+.scoreArea{
+  display: flex;
+}
+.scoreArea h1{
+  text-align: center;
+}
+.scoreArea section{
+  padding: 1rem;
+  margin: .5rem auto;
+}
+.scoreDate, .user, .score{
+  margin-left: 2rem;
+}
+td{
+  text-align: center;
+  padding: 0 1rem;
+}
+.score{
+  color:var(--secondary-color);
+  font-weight: 900;
+}
+/* End leaderboard styles */
+
 /* End Small Screens */
 
 /* Medium Screens */
@@ -212,33 +236,11 @@ li a:hover:not(.active) {
 
 /* End Medium Screens */
 
-/*Leaderboard Styles*/
-.scoreArea{
-  display: flex;
-}
-.scoreArea h1{
-  text-align: center;
-}
-.scoreArea section{
-  padding: 1rem;
-  margin: .5rem auto;
-}
-.scoreDate, .user, .score{
-  margin-left: 2rem;
-}
-td{
-  text-align: center;
-  padding: 0 1rem;
-}
-.score{
-  color:var(--secondary-color);
-  font-weight: 900;
-}
 /* Large Screens */
 @media screen and (min-width: 850px) {
-  body {
+  /* body {
     background-color: rgb(163, 230, 168);
-  }
+  } */
 
   main {
     margin: 1rem;
@@ -248,10 +250,27 @@ td{
 
   .board {
     grid-template-columns: 1fr 1fr 1fr 1fr;
- gap: .2rem;
+    gap: .2rem;
   }
 
   /* End game board styles */
+
+  /* Nav styles */
+
+  ul.nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav {
+    font-size: 105%;
+  }
+
+  .nav li a {
+    padding: 12px 24px;
+  }
+
+  /* End nav styles */
 
   /* Card styles */
   .card {

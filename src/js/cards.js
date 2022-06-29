@@ -1,85 +1,117 @@
-import {
-  renderListWithTemplate
-} from "./utils.js";
+import { renderListWithTemplate } from "./utils.js";
 
-// function revealCard(file) {
-//   picture = querySelector(".overlay");
-//   picture.classList.toggle("hide");
-// }
+var cardOne;
+var cardTwo;
+
+function playGame(card) {
+  if (cardOne === undefined) {
+    cardOne = card;
+    console.log("Set the first card.");
+    var picture = card.querySelector(".overlay");
+    picture.classList.toggle("hide");
+  } else if (cardTwo === undefined) {
+    cardTwo = card;
+    console.log("Set the second card.");
+    var picture = card.querySelector(".overlay");
+    picture.classList.toggle("hide");
+  } else {
+    console.log("Hide all cards.");
+    var allCards = document.querySelectorAll(".overlay");
+    setTimeout(() => {
+      allCards.forEach((card) => {
+        card.classList.remove("hide");
+      });
+    }, 300);
+    cardOne = undefined;
+    cardTwo = undefined;
+  }
+
+  checkCards();
+}
+
+function checkCards() {
+  var string = "Click any card to reveal the other side."
+  if (cardOne != undefined && cardTwo != undefined) {
+    if(cardOne.getAttribute('data-id') === cardTwo.getAttribute('data-id')) {
+      console.log('Match!');
+      string = "Congrats! They match. Click another card to continue."
+    } else {
+      console.log('No match');
+      string = "No match! Click another card to continue."
+    }
+  }
+  document.getElementById("display").innerHTML = string;
+}
 
 export default class Cards {
   constructor(listElement) {
     this.listElement = listElement;
   }
   async init() {
-    // Grab a random list of cases from the API here...
-    // const list =  require('./data.json');
-    // console.log(list);
-    // if (list.length === 0) {
-    //   this.listElement.innerHTML =
-    //     "<li> Your cart is empty</li>";
-    // } else {
-    //   this.renderList(list);
-    // }
-
+    // We currently have hard coded cards.
     var list = [
       {
-        "id": 1,
-        "type": "Missing Person",
-        "victim": "John Doe",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "contact": "website.com",
-        "picture": "./img/placeholder.png"
-      },
-       {
-        "id": 2,
-        "type": "Missing Person",
-        "victim": "John Doe",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "contact": "website.com",
-        "picture": "./img/placeholder.png"
+        id: 1,
+        type: "Missing Person",
+        victim: "John Doe",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        contact: "website.com",
+        picture: "./img/placeholder.png",
       },
       {
-        "id": 3,
-        "type": "Missing Person",
-        "victim": "John Doe",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "contact": "website.com",
-        "picture": "./img/placeholder.png"
+        id: 2,
+        type: "Missing Person",
+        victim: "John Doe",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        contact: "website.com",
+        picture: "./img/placeholder.png",
       },
       {
-        "id": 4,
-        "type": "Missing Person",
-        "victim": "John Doe",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "contact": "website.com",
-        "picture": "./img/placeholder.png"
+        id: 3,
+        type: "Missing Person",
+        victim: "John Doe",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        contact: "website.com",
+        picture: "./img/placeholder.png",
       },
       {
-        "id": 5,
-        "type": "Missing Person",
-        "victim": "John Doe",
-        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "contact": "website.com",
-        "picture": "./img/placeholder.png"
-      }
-    ]
-    
-
+        id: 4,
+        type: "Missing Person",
+        victim: "John Doe",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        contact: "website.com",
+        picture: "./img/placeholder.png",
+      },
+      {
+        id: 5,
+        type: "Missing Person",
+        victim: "John Doe",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        contact: "website.com",
+        picture: "./img/placeholder.png",
+      },
+    ];
     this.renderList(list);
   }
-  prepareTemplate(template, file) {
-    template.querySelector("#victim-name").innerHTML = file.victim;
-    template.querySelector("#case-type").innerHTML = file.type;
-    template.querySelector("#profile").src = file.picture;
-    template.querySelector(".summary").innerHTML = file.summary;
-    template.querySelector("#website").innerHTML = file.contact;
-    template.querySelector(".card_information").setAttribute("data-id", file.id);
+  prepareTemplate(template, info) {
+    template.querySelector("#victim-name").innerHTML = info.victim;
+    template.querySelector("#case-type").innerHTML = info.type;
+    template.querySelector("#profile").src = info.picture;
+    template.querySelector(".summary").innerHTML = info.summary;
+    template.querySelector("#website").innerHTML = info.contact;
+    template.querySelector(".card").setAttribute("data-id", info.id);
     template
       .querySelector(".card")
+      // This might need to change. It's looking for a unique id to reveal a card. If the matching cards have the same id, it may be a problem.
       .addEventListener("click", () => {
-        var picture = document.querySelector(".overlay");
-        picture.classList.toggle("hide");
+        var card = document.querySelector(`[data-id="${info.id}"]`);
+        console.log(info.id);
+        playGame(card);
       });
     return template;
   }
