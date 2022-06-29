@@ -2,11 +2,6 @@ import {
   renderListWithTemplate
 } from "./utils.js";
 
-// function revealCard(file) {
-//   picture = querySelector(".overlay");
-//   picture.classList.toggle("hide");
-// }
-
 export default class Cards {
   constructor(listElement) {
     this.listElement = listElement;
@@ -68,17 +63,20 @@ export default class Cards {
 
     this.renderList(list);
   }
-  prepareTemplate(template, file) {
-    template.querySelector("#victim-name").innerHTML = file.victim;
-    template.querySelector("#case-type").innerHTML = file.type;
-    template.querySelector("#profile").src = file.picture;
-    template.querySelector(".summary").innerHTML = file.summary;
-    template.querySelector("#website").innerHTML = file.contact;
-    template.querySelector(".card_information").setAttribute("data-id", file.id);
+  prepareTemplate(template, info) {
+    template.querySelector("#victim-name").innerHTML = info.victim;
+    template.querySelector("#case-type").innerHTML = info.type;
+    template.querySelector("#profile").src = info.picture;
+    template.querySelector(".summary").innerHTML = info.summary;
+    template.querySelector("#website").innerHTML = info.contact;
+    template.querySelector(".card").setAttribute("data-id", info.id);
     template
       .querySelector(".card")
-      .addEventListener("click", () => {
-        var picture = document.querySelector(".overlay");
+      .addEventListener("click", () => { 
+        var card = document.querySelector(`[data-id="${info.id}"]`);
+        // console.log(info.id)
+        console.log(card);
+        var picture = card.querySelector(".overlay");
         picture.classList.toggle("hide");
       });
     return template;

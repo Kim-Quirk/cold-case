@@ -236,9 +236,9 @@ td{
 }
 /* Large Screens */
 @media screen and (min-width: 850px) {
-  body {
+  /* body {
     background-color: rgb(163, 230, 168);
-  }
+  } */
 
   main {
     margin: 1rem;
@@ -248,7 +248,7 @@ td{
 
   .board {
     grid-template-columns: 1fr 1fr 1fr 1fr;
- gap: .2rem;
+    gap: .2rem;
   }
 
   /* End game board styles */
