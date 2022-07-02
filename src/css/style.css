@@ -28,6 +28,20 @@
 }
 
 /* Mobile first design! Code here is for mobile screens. */
+.alert {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 0 .5rem;
+}
+
+.alert span {
+  cursor: pointer;
+}
+
 img {
   width: 100%;
 }

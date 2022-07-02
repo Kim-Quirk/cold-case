@@ -7,6 +7,7 @@
     <title>CCC | Search Cold Cases</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/search.js" type="module"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +30,13 @@
           id="searchbar"
           placeholder="Jane Doe"
         />
-        <button type="submit">Search</button>
+        <label for="type">Case Type</label>
+        <select id="type" name="type">
+          <option value="homicide">Homicide</option>
+          <option value="missing">Missing Person</option>
+        </select>
+        
+        <button type="submit"></button>
       </form>
       <div class="case-files">
         <div id="case">
