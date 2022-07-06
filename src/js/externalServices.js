@@ -60,6 +60,19 @@ export default class ExternalServices {
     console.log(response);
     return response.accessToken;
   }
+  async getScores() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    };
+    const response = await fetch(baseURL + "scores", options).then(
+      convertToJson
+    );
+    console.log(response);
+    return response;
+  }
 //   async orderRequests(token) {
 //     const options = {
 //       method: "GET",
