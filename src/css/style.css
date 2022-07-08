@@ -191,15 +191,21 @@ hr {
 .card {
   max-width: 110px;
   border-radius: 5px;
-  border: 2px solid var(--primary-color);
   position: relative;
   overflow: hidden;
   margin-bottom: 1.5rem;
   z-index: 5;
+  perspective: 1000px;
+  border: 2px solid var(--primary-color);
+  
+  transition: 0.5s ease;
+  transform-style: preserve-3d;
 }
 
 .card_information {
   padding: 5px;
+  transition: 0.5s ease;
+  transform-style: preserve-3d;
 }
 
 .card h3,
@@ -234,6 +240,8 @@ hr {
   bottom: -10px;
   transition: 0.5s ease;
   z-index: 7;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 #question {
@@ -247,9 +255,8 @@ hr {
 }
 
 .hide {
-  opacity: 0;
+  transform: rotateY(180deg);
 }
-
 .card {
   cursor: pointer;
 }
