@@ -30,14 +30,14 @@ function playGame(card) {
 }
 
 function checkCards() {
-  var string = "Click any card to reveal the other side."
+  var string = "Click any card to reveal the other side.";
   if (cardOne != undefined && cardTwo != undefined) {
-    if(cardOne.getAttribute('data-id') === cardTwo.getAttribute('data-id')) {
-      console.log('Match!');
-      string = "Congrats! They match. Click another card to continue."
+    if (cardOne.getAttribute("data-id") === cardTwo.getAttribute("data-id")) {
+      console.log("Match!");
+      string = "Congrats! They match. Click another card to continue.";
     } else {
-      console.log('No match');
-      string = "No match! Click another card to continue."
+      console.log("No match");
+      string = "No match! Click another card to continue.";
     }
   }
   document.getElementById("display").innerHTML = string;
@@ -113,6 +113,9 @@ export default class Cards {
         console.log(info.id);
         playGame(card);
       });
+    template.querySelector("#question").addEventListener("click", () => {
+      window.location.href = "/search.html";
+    });
     return template;
   }
   renderList(list) {

@@ -1,12 +1,12 @@
 :root {
-  --font-body: 'Source Sans Pro', sans-serif;
-  --font-headline: 'Cinzel', serif;
-  --font-emphasis: 'Alegreya Sans SC', sans-serif;
+  --font-body: "Source Sans Pro", sans-serif;
+  --font-headline: "Cinzel", serif;
+  --font-emphasis: "Alegreya Sans SC", sans-serif;
   /* colors */
   --primary-color: #353535;
-  --secondary-color: #3C6E71;
+  --secondary-color: #3c6e71;
   --tertiary-color: #2e3758;
-  --light-grey: #D9D9D9;
+  --light-grey: #d9d9d9;
   --white: #ebeaed;
   /* colors */
   /* --primary-color: #3a2b42;
@@ -28,6 +28,24 @@
 }
 
 /* Mobile first design! Code here is for mobile screens. */
+.alert {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 0 .5rem;
+}
+
+.alert span {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+}
+
 body {
   background-color: var(--white);
   margin: 0;
@@ -36,7 +54,7 @@ body {
 main {
   border-bottom: 2px solid var(--secondary-color);
   border-top: 2px solid var(--secondary-color);
-  margin: .3rem;
+  margin: 0.3rem;
   font-family: var(--font-body);
   font-size: var(--font-base);
   min-height: 73vh;
@@ -46,6 +64,11 @@ h1 {
   font-family: var(--font-headline);
   font-weight: 700;
   color: var(--tertiary-color);
+}
+
+h2 {
+  font-family: var(--font-emphasis);
+  color: var(--secondary-color);
 }
 
 h3 {
@@ -69,13 +92,13 @@ footer {
 p.color1 {
   background-color: var(--secondary-color);
   color: var(--white);
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
 }
 
 p.color2 {
   background-color: var(--tertiary-color);
   color: var(--white);
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
 }
 
 .text-center {
@@ -109,12 +132,54 @@ li a:hover:not(.active) {
 
 /* End Navigation styles */
 
+/* Detail pages style */
+.case-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 2rem;
+}
+
+.case-details img {
+  max-width: 12rem;
+}
+/* End details page */
+
+/* Search page styles */
+.case-files {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 4rem 0.8rem;
+}
+
+hr {
+  width: 100%;
+  border: solid 1px var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+#case {
+  display: grid;
+}
+
+#case img {
+  max-width: 4rem;
+  margin: 0 auto;
+  justify-self: center;
+}
+
+#case h3 {
+  text-align: center;
+}
+/* End search page styles */
+
 /* Game board styles */
 
 .board {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .1rem;
+  gap: 0.1rem;
   align-items: center;
   justify-items: center;
   margin: 1rem 0;
@@ -130,6 +195,7 @@ li a:hover:not(.active) {
   position: relative;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  z-index: 5;
 }
 
 .card_information {
@@ -166,7 +232,18 @@ li a:hover:not(.active) {
 .overlay {
   position: absolute;
   bottom: -10px;
-  transition: .5s ease;
+  transition: 0.5s ease;
+  z-index: 7;
+}
+
+#question {
+  position: relative;
+  bottom: -35px;
+  left: 7px;
+  max-width: 23px;
+  opacity: 0.5;
+  z-index: 6;
+  cursor: pointer;
 }
 
 .hide {
@@ -180,25 +257,28 @@ li a:hover:not(.active) {
 /* End Card styles */
 
 /*Leaderboard Styles*/
-.scoreArea{
+.scoreArea {
   display: flex;
+  margin: 0 15rem;
 }
-.scoreArea h1{
+.scoreArea h1 {
   text-align: center;
 }
-.scoreArea section{
+.scoreArea section {
   padding: 1rem;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
-.scoreDate, .user, .score{
+.scoreDate,
+.user,
+.score {
   margin-left: 2rem;
 }
-td{
+td {
   text-align: center;
   padding: 0 1rem;
 }
-.score{
-  color:var(--secondary-color);
+.score {
+  color: var(--secondary-color);
   font-weight: 900;
 }
 /* End leaderboard styles */
@@ -207,7 +287,6 @@ td{
 
 /* Medium Screens */
 @media screen and (min-width: 400px) {
-
   /* Navigation styles */
   ul.nav {
     list-style-type: none;
@@ -228,7 +307,7 @@ td{
   /* Game board styles */
   .board {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: .2rem;
+    gap: 0.2rem;
   }
 
   /* End Game board styles */
@@ -250,7 +329,7 @@ td{
 
   .board {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: .2rem;
+    gap: 0.2rem;
   }
 
   /* End game board styles */
@@ -294,5 +373,67 @@ td{
     margin: 5px auto;
     display: block;
   }
+  /* Search page styles */
+  .case-files {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 4rem 0.8rem;
+    grid-gap: 2rem;
+  }
+
+  hr {
+   display: none;
+  }
+
+  #case {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  #case img {
+    max-width: 8rem;
+    align-self: center;
+  }
+  /* end search styles */
+  /* Detail pages style */
+  .case-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .case-details img {
+    max-width: 15rem;
+  }
+  /* End details page */
 }
-  /* End Large Screen */
+
+/* Login styles */
+.loginForm {
+  background-color: var(--tertiary-color);
+  max-width: max-content;
+  margin: 10% auto;
+  padding: 0 1rem 1rem 1rem;
+  color: var(--white);
+}
+.loginForm h1,
+.loginForm hr {
+  color: var(--white);
+}
+.loginForm button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 10%;
+  border: var(--tertiary-color) 1px solid;
+  font: var(--font-base);
+  padding: 0 1ch;
+}
+.loginbtn, .signupbtn {
+  float: right;
+}
+/*End Login Styles*/
+
+/* End Large Screen */
