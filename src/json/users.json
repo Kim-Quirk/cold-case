@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Kimberly Black",
+      "nickname": "Kim",
+      "email": "kbemail@email.com"
+    },
+    {
+      "name": "Allison Alley",
+      "nickname": "Ali",
+      "email": "aaemail@email.com"
+    },
+    {
+      "name": "Kayla Stevenson",
+      "nickname": "Kayla",
+      "email": "ksemail@email.com"
+    },
+    {
+      "name": "Abigail Howell",
+      "nickname": "Abby",
+      "email": "ahemail@email.com"
+    },
+    {
+      "name": "Jane Doe",
+      "nickname": "Doey",
+      "email": "jdoeyemail@email.com"
+    },
+    {
+      "name": "John Doe",
+      "nickname": "Johnny",
+      "email": "jdemail@email.com"
+    }
+  ]
