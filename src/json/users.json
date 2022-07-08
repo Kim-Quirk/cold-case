@@ -2,31 +2,43 @@
     {
       "name": "Kimberly Black",
       "nickname": "Kim",
-      "email": "kbemail@email.com"
+      "email": "kbemail@email.com",
+      "password": "123"
+    },
+    {
+      "name": "Test User",
+      "nickname": "User",
+      "email": "user@gmail.com",
+      "password": "pass"
     },
     {
       "name": "Allison Alley",
       "nickname": "Ali",
-      "email": "aaemail@email.com"
+      "email": "aaemail@email.com",
+      "password": "123"
     },
     {
       "name": "Kayla Stevenson",
       "nickname": "Kayla",
-      "email": "ksemail@email.com"
+      "email": "ksemail@email.com",
+      "password": "123"
     },
     {
       "name": "Abigail Howell",
       "nickname": "Abby",
-      "email": "ahemail@email.com"
+      "email": "ahemail@email.com",
+      "password": "123"
     },
     {
       "name": "Jane Doe",
       "nickname": "Doey",
-      "email": "jdoeyemail@email.com"
+      "email": "jdoeyemail@email.com",
+      "password": "123"
     },
     {
       "name": "John Doe",
       "nickname": "Johnny",
-      "email": "jdemail@email.com"
+      "email": "jdemail@email.com",
+      "password": "123"
     }
   ]

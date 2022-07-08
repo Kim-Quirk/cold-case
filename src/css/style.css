@@ -7,6 +7,8 @@
   --secondary-color: #3c6e71;
   --tertiary-color: #2e3758;
   --light-grey: #d9d9d9;
+  --bright-teal-color: #68bdc2;
+  --bright-blue-color: #778ad1;
   --white: #ebeaed;
   /* colors */
   /* --primary-color: #3a2b42;
@@ -36,6 +38,7 @@
   justify-items: center;
   justify-content: space-between;
   padding: 0 .5rem;
+  color: var(--white);
 }
 
 .alert span {
@@ -103,6 +106,20 @@ p.color2 {
 
 .text-center {
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link, a:visited {
+  color: var(--tertiary-color);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--secondary-color);
 }
 
 /* Navigation styles */
@@ -283,6 +300,61 @@ td {
 }
 /* End leaderboard styles */
 
+/* Login styles */
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 1.3rem;
+}
+
+.loginForm {
+  background-color: var(--primary-color);
+  max-width: max-content;
+  margin: 4rem auto;
+  padding: 0 1rem 1rem 1rem;
+  color: var(--white);
+  border-radius: 10px;
+}
+.loginForm h1 {
+  font-family: var(--font-emphasis);
+}
+.loginForm h1,
+.loginForm hr {
+  color: var(--white);
+}
+.loginForm button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 5px;
+  border: var(--tertiary-color) 1px solid;
+  font: var(--font-base);
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.loginForm a:link, .loginForm a:visited {
+  color: var(--bright-blue-color);
+}
+
+.loginForm a:hover {
+  color: var(--bright-teal-color);
+}
+
+/* .loginbtn, .signupbtn {
+  float: right;
+} */
+/*End Login Styles*/
+
 /* End Small Screens */
 
 /* Medium Screens */
@@ -410,30 +482,3 @@ td {
   }
   /* End details page */
 }
-
-/* Login styles */
-.loginForm {
-  background-color: var(--tertiary-color);
-  max-width: max-content;
-  margin: 10% auto;
-  padding: 0 1rem 1rem 1rem;
-  color: var(--white);
-}
-.loginForm h1,
-.loginForm hr {
-  color: var(--white);
-}
-.loginForm button {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  border-radius: 10%;
-  border: var(--tertiary-color) 1px solid;
-  font: var(--font-base);
-  padding: 0 1ch;
-}
-.loginbtn, .signupbtn {
-  float: right;
-}
-/*End Login Styles*/
-
-/* End Large Screen */

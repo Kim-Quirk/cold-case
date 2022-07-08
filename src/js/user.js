@@ -5,16 +5,22 @@ export default class User {
     constructor() {
       this.token = null;
       this.services = new ExternalServices();
+      this.users = [];
     }
-    async login() {
-      //http://157.201.228.93:2992/login
-      try {
-        this.token = await this.services.loginRequest();
-        // console.log("Logged in??", this.token)
-        console.log("Success???");
-      } catch (err) {
-        // remember this from before?
-        alertMessage(err.message.message);
-      }
+    async init() {
+      var results = await this.services.fetchJSON("users");
+      this.users = results;
+      console.log("users", this.users);
+    }
+    login(email, password) {
+      // console.log(email, password);
+      this.users.forEach(user => {
+          if (user.email == email) {
+          console.log("Match!");
+          if (user.password == password) {
+            console.log("Match!");
+          }
+        }
+      });
     }
 }
