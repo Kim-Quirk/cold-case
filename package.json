@@ -1,7 +1,7 @@
 {
   "name": "cold-cases",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cold case game",
   "main": "index.js",
   "scripts": {
     "start": "snowpack dev",

@@ -8,17 +8,32 @@ function playGame(card) {
     cardOne = card;
     console.log("Set the first card.");
     var picture = card.querySelector(".overlay");
+    var cardFront = card.querySelector(".card_information")
     picture.classList.toggle("hide");
+    cardFront.classList.toggle("hide");
+    card.classList.toggle("hide");
   } else if (cardTwo === undefined) {
     cardTwo = card;
     console.log("Set the second card.");
     var picture = card.querySelector(".overlay");
+    var cardFront = card.querySelector(".card_information")
     picture.classList.toggle("hide");
+    cardFront.classList.toggle("hide");
+    card.classList.toggle("hide");
   } else {
     console.log("Hide all cards.");
-    var allCards = document.querySelectorAll(".overlay");
+    
+    var allCards = document.querySelectorAll(".card");
+    var allCardbacks = document.querySelectorAll(".overlay");
+    var allFronts = document.querySelectorAll(".card_information");
     setTimeout(() => {
       allCards.forEach((card) => {
+        card.classList.remove("hide");
+      });
+      allCardbacks.forEach((card) => {
+        card.classList.remove("hide");
+      });
+      allFronts.forEach((card) => {
         card.classList.remove("hide");
       });
     }, 300);
