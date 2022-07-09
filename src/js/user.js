@@ -1,5 +1,5 @@
 import ExternalServices from "./externalServices.js";
-import { alertMessage } from "./utils.js";
+import { alertMessage, setLocalStorage, getLocalStorage } from "./utils.js";
 
 export default class User {
     constructor() {
@@ -19,8 +19,34 @@ export default class User {
           console.log("Match!");
           if (user.password == password) {
             console.log("Match!");
+            setLocalStorage("verified", true);
+            setLocalStorage("user", user);
           }
         }
+        
       });
+      if (getLocalStorage("verified") === true) {
+        alertMessage("Correct email or password.");
+      }
+      else {
+        alertMessage("Incorrect email or password.");
+      }
+    }
+    signup(name, nickname, email, password, repassword) {
+      if (password == repassword) {
+        const newUser = {
+          name: name,
+          nickname: nickname,
+          email: email,
+          password: password
+        };
+        console.log(newUser);
+        this.users.push(newUser);
+        // Currently not working.
+        // this.services.saveJSON("signup", this.users);
+      }
+      else {
+        alertMessage("Passwords do not match.");
+      }
     }
 }

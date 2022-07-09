@@ -12,39 +12,18 @@ async function convertToJson(res) {
 export default class ExternalServices {
   constructor() {}
   async fetchJSON(file) {
-    return await fetch(`./json/` + file + `.json`)
-      .then(convertToJson);
-    // return await fetch(`./json/` + file + `.json`)
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((jsondata) => console.log(jsondata));
+    return await fetch(`./json/` + file + `.json`).then(convertToJson);
   }
-  // getData() {
-  //   return fetch(baseURL + `cases`)
-  //     .then(convertToJson)
-  //     .then((data) => data.Result);
-  // }
-  // async findCaseById(id) {
-  //   return await fetch(baseURL + `cases/${id}`)
-  //     .then(convertToJson)
-  //     .then((data) => data.Result);
-  // }
-  // async findCaseByType(type) {
-  //   return await fetch(baseURL + `cases/${type}`)
-  //     .then(convertToJson)
-  //     .then((data) => data.Result);
-  // }
-  // async findCaseByDate(date) {
-  //   return await fetch(baseURL + `cases/${date}`)
-  //     .then(convertToJson)
-  //     .then((data) => data.Result);
-  // }
-  // async findCaseByStatus(status) {
-  //   return await fetch(baseURL + `cases/${status}`)
-  //     .then(convertToJson)
-  //     .then((data) => data.Result);
-  // }
+  // Unsure how to get this to work...
+  saveJSON(file, data) {
+    const json = JSON.stringify(data);
+    try {
+      fs.writeFileSync(`./json/` + file + `.json`, json);
+      console.log("JSON data is saved.");
+    } catch (error) {
+      console.error(err);
+    }
+  }
   //   async checkout(payload) {
   //     const options = {
   //       method: "POST",

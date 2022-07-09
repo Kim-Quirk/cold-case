@@ -75,6 +75,30 @@ export async function loadHeaderFooter() {
   const footerElement = document.getElementById("main-footer");
   renderWithTemplate(header, headerElement);
   renderWithTemplate(footer, footerElement);
+  updatedHeader();
+}
+
+export function updatedHeader() {
+  console.log(document.querySelector("#login"));
+  var account = document.querySelector("#login");
+  console.log(account);
+  if (getLocalStorage("verified") === true) {
+    account.textContent = "Logout";
+    account.removeAttribute("href", "");
+
+    var name = document.createElement("li");
+    var user = getLocalStorage("user");
+    name.textContent = `Hi ` + user.nickname + `!`;
+    name.setAttribute("id", "profileName");
+    
+    var parent = document.querySelector(".nav");
+    parent.appendChild(name);
+    account.addEventListener("click", () => {
+      setLocalStorage("user", undefined);
+      setLocalStorage("verified", false);
+      location.reload();
+    })
+  }
 }
 
 // takes a form element and returns an object where the key is the "name" of the form input.
