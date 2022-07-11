@@ -23,7 +23,6 @@ export default class User {
             setLocalStorage("user", user);
           }
         }
-        
       });
       if (getLocalStorage("verified") === true) {
         alertMessage("Correct email or password.");
@@ -34,16 +33,17 @@ export default class User {
     }
     signup(name, nickname, email, password, repassword) {
       if (password == repassword) {
+        var id = this.users.length + 1;
         const newUser = {
           name: name,
           nickname: nickname,
           email: email,
-          password: password
+          password: password,
+          userid: id
         };
         console.log(newUser);
-        this.users.push(newUser);
-        // Currently not working.
-        // this.services.saveJSON("signup", this.users);
+        setLocalStorage("verified", newUser);
+            setLocalStorage("user", newUser);
       }
       else {
         alertMessage("Passwords do not match.");

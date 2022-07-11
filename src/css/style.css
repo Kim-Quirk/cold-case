@@ -135,6 +135,7 @@ ul.nav {
   color: var(--white);
   padding: 8px 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav #profileName {
@@ -282,8 +283,9 @@ hr {
 
 /*Leaderboard Styles*/
 .scoreArea {
-  display: flex;
-  margin: 0 15rem;
+  display: block;
+  margin: 0 .5rem;
+  text-align: center;
 }
 .scoreArea h1 {
   text-align: center;
@@ -291,6 +293,9 @@ hr {
 .scoreArea section {
   padding: 1rem;
   margin: 0.5rem auto;
+}
+table {
+  margin: 0 auto;
 }
 .scoreDate,
 .user,
@@ -304,6 +309,10 @@ td {
 .score {
   color: var(--secondary-color);
   font-weight: 900;
+}
+
+.personalBests {
+  display: none;
 }
 /* End leaderboard styles */
 
@@ -481,6 +490,16 @@ input[type=text], input[type=password], input[type=email] {
     align-self: center;
   }
   /* end search styles */
+  /* Leaderboard styles */
+  .scoreArea {
+    display: flex;
+    margin: 0 .5rem;
+  }
+  td, th {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  /* End leaderboard styles */
   /* Detail pages style */
   .case-details {
     display: grid;
