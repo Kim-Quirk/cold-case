@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCC | Memory Game</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <template id="card-template">
+      <div class="holder">
+        <img id="question" src="./img/questionmark.png">
+        <div class="card">
+          <div class="card_information">
+            <h3 class="text-center" id="case-type">Missing Person</h3>
+            <img id="profile" src="./img/placeholder.png" alt="placeholder image">
+            <h5 class="text-center" id="victim-name"></h5>
+            <p class="summary"></p>
+            <h6 class="text-center" id="website"></h6>
+          </div>
+          <div class="overlay">
+            <img id="card-background" src="./img/card.jpg">
+          </div>
+        </div>
+      </div>
+    </template>
+    <script src="./js/game.js" type="module"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&amp;family=Cinzel:wght@400;500;600;700;800&amp;family=Istok+Web&amp;family=Source+Sans+Pro&amp;family=Hind&amp;display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- The nav bar is in the partials folder. -->
+    <header class="divider" id="main-header"></header>
+    <main>
+      <h1>Cold Case Cards: Memory Game</h1>
+      <h3 id="display" class="text-center">
+        Welcome! Click on any card to start the game.
+      </h3>
+      <div class="board"></div>
+    </main>
+    <!-- The footer is in the partials folder. -->
+    <footer id="main-footer"></footer>
+  
+
+</body></html>

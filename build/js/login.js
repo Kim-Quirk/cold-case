@@ -1,0 +1,1 @@
+import{loadHeaderFooter as s}from"./utils.js";import n from"./user.js";s();const e=new n;e.init(),document.forms.login.addEventListener("submit",o=>{o.preventDefault();const r=document.querySelector("#email").value,t=document.querySelector("#password").value;e.login(r,t)});
