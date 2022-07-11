@@ -137,6 +137,10 @@ ul.nav {
   text-decoration: none;
 }
 
+.nav #profileName {
+  padding: 8px 16px;
+}
+
 li a.active {
   background-color: var(--tertiary-color);
   color: white;
@@ -414,6 +418,7 @@ input[type=text], input[type=password], input[type=email] {
   ul.nav {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 
   .nav {
@@ -422,6 +427,11 @@ input[type=text], input[type=password], input[type=email] {
 
   .nav li a {
     padding: 12px 24px;
+  }
+
+  .nav #profileName {
+    padding: 12px 24px;
+    margin-left: auto;
   }
 
   /* End nav styles */
