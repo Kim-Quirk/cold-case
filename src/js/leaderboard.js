@@ -4,4 +4,4 @@ import Scores from "./scores.js";
 loadHeaderFooter();
 
 const score = new Scores();
-score.fetchScores();
+score.init();

@@ -15,58 +15,12 @@ export default class ExternalServices {
     return await fetch(`./json/` + file + `.json`).then(convertToJson);
   }
   // Unsure how to get this to work...
-  saveJSON(file, data) {
-    const json = JSON.stringify(data);
-    try {
-      fs.writeFileSync(`./json/` + file + `.json`, json);
-      console.log("JSON data is saved.");
-    } catch (error) {
-      console.error(err);
-    }
-  }
-  //   async checkout(payload) {
-  //     const options = {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(payload),
-  //     };
-  //     return await fetch(baseURL + "checkout/", options).then(convertToJson);
-  //   }
-  // async loginRequest() {
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     }
-  //   };
-  //   const response = await fetch(baseURL + "login", options).then(
-  //     convertToJson
-  //   );
-  //   console.log(response);
-  //   return response.accessToken;
-  // }
-  // async getScores() {
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     }
-  //   };
-  //   const response = await fetch(baseURL + "scores", options).then(
-  //     convertToJson
-  //   );
-  //   console.log(response);
-  //   return response;
-  // }
-  //   async orderRequests(token) {
-  //     const options = {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     };
-  //     return await fetch(baseURL + "orders", options).then(convertToJson);
+  // saveJSON(file, data) {
+  //   const json = JSON.stringify(data);
+  //   try {
+  //     fs.writeFileSync(`./json/` + file + `.json`, json);
+  //     console.log("JSON data is saved.");
+  //   } catch (error) {
+  //     console.error(err);
   //   }
 }
