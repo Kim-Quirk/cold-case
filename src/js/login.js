@@ -1,4 +1,4 @@
-import { loadHeaderFooter } from "./utils.js";
+import { loadHeaderFooter, alertMessage, getLocalStorage } from "./utils.js";
 import User from "./user.js";
 
 loadHeaderFooter();
@@ -15,6 +15,9 @@ if (window.location.href.indexOf("/login") > -1) {
     //   console.log(email, password);
     users.login(email, password);
   });
+  if (getLocalStorage("verified") === true) {
+    alertMessage(`Login successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
+  }
 }
 
 if (window.location.href.indexOf("/signup") > -1) {

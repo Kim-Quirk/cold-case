@@ -21,11 +21,12 @@ export default class User {
             console.log("Match!");
             setLocalStorage("verified", true);
             setLocalStorage("user", user);
+            window.location.reload();
           }
         }
       });
       if (getLocalStorage("verified") === true) {
-        alertMessage("Correct email or password.");
+        alertMessage(`Login successful! Welcome,` + getLocalStorage("user").nickname + `!`);
       }
       else {
         alertMessage("Incorrect email or password.");
