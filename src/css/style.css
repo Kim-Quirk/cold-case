@@ -200,6 +200,56 @@ hr {
 }
 /* End search page styles */
 
+/* Start search form styles */
+
+.search button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 5px;
+  border: var(--tertiary-color) 0px solid;
+  font: var(--font-base);
+  padding: 10.2px 20px;
+  max-width: fit-content;
+  width: 100%;
+  margin: 8px 0;
+  justify-self: right;
+}
+
+.search input[type=text] {
+  max-width: 9.2rem;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.search select, .search input[type=date] {
+  max-width: fit-content;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.search label {
+  display: none;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* End search form styles */
+
 /* Game board styles */
 
 .board {
