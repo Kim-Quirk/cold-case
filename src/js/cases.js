@@ -13,16 +13,10 @@ export default class Cases {
       console.log("cases", this.cases);
       return this.cases;
     }
-  // async filter(type, date, status) {
-  //   // const caseByType = null;
-  //   // const caseByDate = null;
-  //   // const caseByStatus = null;
-  //   // var filter = { caseType: type, caseDate: date, caseStatus: status };
-  //   // filteredCases = this.caseData.filter(function (item) {
-  //   //   for (var key in filter) {
-  //   //     if (item[key] === undefined || item[key] != filter[key]) return false;
-  //   //   }
-  //   //   return true;
-  //   // });
-  // }
+  async filter(caseName, type, status, date) {
+    console.log(caseName, type, status, date);
+  }
+  buildDetails() {
+    // Add code to direct/build details page
+  }
 }

@@ -1,1 +1,1 @@
-import{loadHeaderFooter as s}from"./utils.js";import o from"./cases.js";s();const e=new o;e.init();
+import{loadHeaderFooter as r}from"./utils.js";import u from"./cases.js";r();const e=new u;e.init(),document.forms.search.addEventListener("submit",t=>{t.preventDefault();const s=document.querySelector("#caseName").value,o=document.querySelector("#type").value,a=document.querySelector("#status").value,c=document.querySelector("#date").value;e.filter(s,o,a,c)});

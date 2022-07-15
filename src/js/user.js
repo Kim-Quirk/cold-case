@@ -21,11 +21,12 @@ export default class User {
             console.log("Match!");
             setLocalStorage("verified", true);
             setLocalStorage("user", user);
+            window.location.reload();
           }
         }
       });
       if (getLocalStorage("verified") === true) {
-        alertMessage("Correct email or password.");
+        alertMessage(`Login successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
       }
       else {
         alertMessage("Incorrect email or password.");
@@ -42,11 +43,15 @@ export default class User {
           userid: id
         };
         console.log(newUser);
-        setLocalStorage("verified", newUser);
+        setLocalStorage("verified", true);
             setLocalStorage("user", newUser);
+            window.location.reload();
       }
       else {
         alertMessage("Passwords do not match.");
+      }
+      if (getLocalStorage("verified") === true) {
+        alertMessage(`Sign up successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
       }
     }
 }
