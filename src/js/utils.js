@@ -52,6 +52,24 @@ export function renderListWithTemplate(
   });
 }
 
+// export function renderCardsWithTemplate(
+//   template,
+//   parentElement,
+//   list,
+//   callback
+// ) {
+//   for (var i = 0; i < list.length; i++) {
+//     const clone = template.content.cloneNode(true);
+//     const templateWithData = callback(clone, list[i], i);
+//     parentElement.appendChild(templateWithData);
+//   }
+//   list.forEach((item) => {
+//     const clone = template.content.cloneNode(true);
+//     const templateWithData = callback(clone, item);
+//     parentElement.appendChild(templateWithData);
+//   });
+// }
+
 export function renderWithTemplate(template, parent, data, callback) {
   let clone = template.content.cloneNode(true);
   if (callback) {
