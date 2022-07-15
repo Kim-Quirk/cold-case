@@ -1,5 +1,6 @@
+import Cases from "./cases.js";
 import { renderListWithTemplate } from "./utils.js";
-
+import ExternalServices from "./externalServices.js";
 var cardOne;
 var cardTwo;
 
@@ -61,71 +62,54 @@ function checkCards() {
 export default class Cards {
   constructor(listElement) {
     this.listElement = listElement;
+    this.cases = new Cases;
+    this.services = new ExternalServices();
   }
   async init() {
     // We currently have hard coded cards.
-    var list = [
-      {
-        id: 1,
-        type: "Missing Person",
-        victim: "John Doe",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        contact: "website.com",
-        picture: "./img/placeholder.png",
-      },
-      {
-        id: 2,
-        type: "Missing Person",
-        victim: "John Doe",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        contact: "website.com",
-        picture: "./img/placeholder.png",
-      },
-      {
-        id: 3,
-        type: "Missing Person",
-        victim: "John Doe",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        contact: "website.com",
-        picture: "./img/placeholder.png",
-      },
-      {
-        id: 4,
-        type: "Missing Person",
-        victim: "John Doe",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        contact: "website.com",
-        picture: "./img/placeholder.png",
-      },
-      {
-        id: 5,
-        type: "Missing Person",
-        victim: "John Doe",
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        contact: "website.com",
-        picture: "./img/placeholder.png",
-      },
-    ];
+    var list = await this.services.fetchJSON("game");
+    list = this.shuffle(list);
     this.renderList(list);
   }
+  shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+  
   prepareTemplate(template, info) {
-    template.querySelector("#victim-name").innerHTML = info.victim;
-    template.querySelector("#case-type").innerHTML = info.type;
-    template.querySelector("#profile").src = info.picture;
-    template.querySelector(".summary").innerHTML = info.summary;
-    template.querySelector("#website").innerHTML = info.contact;
+    template.querySelector("#case-name").innerHTML = info.caseName;
+    template.querySelector("#victim-name").innerHTML = info.victimName;
+    template.querySelector("#case-type").innerHTML = info.caseType;
+    // We should add/display the case "name"??
+    if (info.victimPicture == "any") {
+      template.querySelector("#profile").src = "./img/placeholder.png";
+    } else {
+      template.querySelector("#profile").src = info.victimPicture;
+    }
+    
+    template.querySelector(".summary").innerHTML = info.summarizedCaseDescription;
+    template.querySelector("#website").innerHTML = info.websiteUrl;
     template.querySelector(".card").setAttribute("data-id", info.id);
+    template.querySelector(".card").setAttribute("data-num", info.num);
     template
       .querySelector(".card")
       // This might need to change. It's looking for a unique id to reveal a card. If the matching cards have the same id, it may be a problem.
       .addEventListener("click", () => {
-        var card = document.querySelector(`[data-id="${info.id}"]`);
-        console.log(info.id);
+        var card = document.querySelector(`[data-num="${info.num}"]`);
+        console.log(info.num);
         playGame(card);
       });
     template.querySelector("#question").addEventListener("click", () => {
@@ -135,6 +119,7 @@ export default class Cards {
   }
   renderList(list) {
     this.listElement.innerHTML = "";
+    console.log("list again?", list);
     const template = document.getElementById("card-template");
     renderListWithTemplate(
       template,

@@ -1,15 +1,18 @@
 import ExternalServices from "./externalServices.js";
-import { alertMessage } from "./utils.js";
+import { alertMessage, getLocalStorage } from "./utils.js";
 
 export default class Cases {
-  constructor() {
-    this.services = new ExternalServices();
-    this.caseData = "";
-  }
-  async init() {
-    this.caseData = this.services.fetchJSON("cases");
-    console.log(this.caseData);
-  }
+    constructor() {
+      this.token = null;
+      this.services = new ExternalServices();
+      this.cases;
+    }
+    async init() {
+      var results = await this.services.fetchJSON("cases");
+      this.cases = results;
+      console.log("cases", this.cases);
+      return this.cases;
+    }
   async filter(caseName, type, status, date) {
     console.log(caseName, type, status, date);
   }

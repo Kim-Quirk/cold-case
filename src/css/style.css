@@ -272,7 +272,7 @@ hr {
   margin-bottom: 1.5rem;
   z-index: 5;
   border: 2px solid var(--primary-color);
-  
+  height: 22rem;
   transition: 0.5s ease;
 }
 
@@ -293,6 +293,9 @@ hr {
   font-size: 50%;
 }
 
+#case-name{
+color: var(--secondary-color);
+}
 #profile {
   max-width: 75px;
   display: block;
