@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "caseName": "Baker Co John Doe 1995",
     "summarizedCaseDescription": "Unidentified dead male body was found in 1995 in a ditch.",
     "caseType": "homicide",
@@ -13,6 +14,7 @@
     "agencyInformation": "Baker Company"
   },
   {
+    "id": 2,
     "caseName": "Stabbed Agatha",
     "summarizedCaseDescription": "She was stabbed and left in the woods.",
     "caseType": "homicide",
@@ -26,6 +28,7 @@
     "agencyInformation": "Arkanasas Cold Cases"
   },
   {
+    "id": 3,
     "caseName": "Headless Jane Doe",
     "summarizedCaseDescription": "The bodies head has never been located. However, the rest of the body was found in a dumpster.",
     "caseType": "homicide",
@@ -39,6 +42,7 @@
     "agencyInformation": "Idaho Cold Cases"
   },
   {
+    "id": 4,
     "caseName": "The Crazy Lady",
     "summarizedCaseDescription": "She was only 18 when she went missing. No one knows where she went. People think she may have fallen into the poisonous hole on her property.",
     "caseType": "missing persons",
@@ -52,6 +56,7 @@
     "agencyInformation": "New Mexico Cold Cases"
   },
   {
+    "id": 5,
     "caseName": "The Alley Leg",
     "summarizedCaseDescription": "A servered female leg was found in an alleyway. No further clues have been found. People suspect it was a homicide, as no one came to claim the leg.",
     "caseType": "homicide",
