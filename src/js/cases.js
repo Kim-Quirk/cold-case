@@ -13,4 +13,7 @@ export default class Cases {
   async filter(caseName, type, status, date) {
     console.log(caseName, type, status, date);
   }
+  buildDetails() {
+    // Add code to direct/build details page
+  }
 }
