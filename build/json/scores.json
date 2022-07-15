@@ -1,23 +1,42 @@
 [
   {
-   "score": 500,
-    "nickname": "Kim"
- },
-   {
-   "score": 999999,
-    "nickname": "Ali"
- },
-   {
-   "score": 150,
-    "nickname": "Doey"
- },
-   {
-   "score": 321,
-    "nickname": "John"
- },
- {
-   "score": 1,
-    "nickname": "Abby"
- }  
- ]
- 
+    "score": 2.30,
+    "nickname": "Kim",
+    "userid": 0
+  },
+  {
+    "score": 0.10,
+    "nickname": "Ali",
+    "userid": 2
+  },
+  {
+    "score": 35.00,
+    "nickname": "Doey",
+    "userid": 5
+  },
+  {
+    "score": 45.05,
+    "nickname": "Johnny",
+    "userid": 6
+  },
+  {
+    "score": 59.99,
+    "nickname": "Abby",
+    "userid": 4
+  },
+  {
+    "score": 1.35,
+    "nickname": "User",
+    "userid": 1
+  },
+  {
+    "score": 5.50,
+    "nickname": "User",
+    "userid": 1
+  },
+  {
+    "score": 4.50,
+    "nickname": "User",
+    "userid": 1
+  }
+]
