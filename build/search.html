@@ -16,16 +16,29 @@
     <header class="divider" id="main-header"></header>
     <main>
       <h1>Cold Case Search</h1>
-      <form>
-        <label for="searchbar">Enter a Keyword</label>
-        <input type="text" name="searchbar" id="searchbar" placeholder="Jane Doe">
-        <label for="type">Case Type</label>
+      <br>
+      <h4>The following are various filter options to help you search through all the cold cases. Leave any option(s) blank and it will not be applied to your search.</h4>
+      <form class="search" name="search">
+        <label for="searchbar"></label>
+        <input type="text" name="searchbar" id="caseName" placeholder="Enter Case Name">
+        <label for="type"></label>
         <select id="type" name="type">
+          <option hidden="">Select Type</option>
           <option value="homicide">Homicide</option>
           <option value="missing">Missing Person</option>
+          <option value="all">Any type</option>
         </select>
+        <label for="status"></label>
+        <select id="status" name="status">
+          <option hidden="">Select Status</option>
+          <option value="unsolved">Unsolved</option>
+          <option value="solved">Solved</option>
+          <option value="all">Any status</option>
+        </select>
+        <label for="date"></label>
+        <input type="date" id="date" name="date">
         
-        <button type="submit"></button>
+        <button type="submit">Search</button>
       </form>
       <div class="case-files">
         <div id="case">

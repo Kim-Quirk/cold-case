@@ -63,5 +63,18 @@
     "caseStatus": "unsolved",
     "websiteUrl": "https://dnadoeproject.org/case/rock-co-john-doe-1981/",
     "agencyInformation": "New Mexico Cold Cases"
+  },
+  {
+    "caseName": "Jerry Springer",
+    "summarizedCaseDescription": "A man was found dead in a ditch beside a road. His death was caused by blunt forced trauma to the head. The case quickly went cold. In 2020, the case got some traction. A suspect is currently on trial for this murder.",
+    "caseType": "homicide",
+    "victimPicture": "any",
+    "victimName": "Jerry Springer",
+    "victimAge": "42",
+    "caseDate": "December 25th, 1987",
+    "location": "New Jersey",
+    "caseStatus": "solved",
+    "websiteUrl": "https://dnadoeproject.org/case/rock-co-john-doe-1981/",
+    "agencyInformation": "New Mexico Cold Cases"
   }
 ]
