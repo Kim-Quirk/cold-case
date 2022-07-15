@@ -39,6 +39,7 @@
   justify-content: space-between;
   padding: 0 .5rem;
   color: var(--white);
+  margin-top: 1rem;
 }
 
 .alert span {
@@ -87,9 +88,12 @@ header,
 footer {
   background-color: var(--primary-color);
   color: var(--white);
-  /* padding: 1rem .5rem; */
   font-family: var(--font-emphasis);
   font-size: var(--large-font);
+}
+
+footer {
+   padding: 8px 16px;
 }
 
 p.color1 {
@@ -196,6 +200,56 @@ hr {
 }
 /* End search page styles */
 
+/* Start search form styles */
+
+.search button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 5px;
+  border: var(--tertiary-color) 0px solid;
+  font: var(--font-base);
+  padding: 10.2px 20px;
+  max-width: fit-content;
+  width: 100%;
+  margin: 8px 0;
+  justify-self: right;
+}
+
+.search input[type=text] {
+  max-width: 9.2rem;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.search select, .search input[type=date] {
+  max-width: fit-content;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.search label {
+  display: none;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* End search form styles */
+
 /* Game board styles */
 
 .board {
@@ -285,14 +339,30 @@ hr {
 .scoreArea {
   display: block;
   margin: 0 .5rem;
-  text-align: center;
+  /* text-align: center; */
 }
+
+.highscores {
+  justify-self: center;
+  margin: 0 auto;
+  width: fit-content;
+  padding: 0;
+}
+
+.highscores #delete {
+  cursor: pointer;
+  margin-left: 2rem;
+  color: rgb(212, 61, 61);
+  font-weight: bolder;
+}
+
 .scoreArea h1 {
   text-align: center;
+  margin-bottom: 0.2rem;
 }
 .scoreArea section {
   padding: 1rem;
-  margin: 0.5rem auto;
+  /* margin: 0.5rem auto; */
 }
 table {
   margin: 0 auto;
@@ -494,6 +564,7 @@ input[type=text], input[type=password], input[type=email] {
   .scoreArea {
     display: flex;
     margin: 0 .5rem;
+    justify-content: center;
   }
   td, th {
     text-align: center;
