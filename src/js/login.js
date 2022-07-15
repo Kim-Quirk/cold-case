@@ -33,4 +33,7 @@ if (window.location.href.indexOf("/signup") > -1) {
     //   console.log(email, password);
     users.signup(name, nickname, email, password, repassword);
   });
+  if (getLocalStorage("verified") === true) {
+    alertMessage(`Sign up successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
+  }
 }
