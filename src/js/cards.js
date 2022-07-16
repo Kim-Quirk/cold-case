@@ -51,6 +51,8 @@ function checkCards() {
     if (cardOne.getAttribute("data-id") === cardTwo.getAttribute("data-id")) {
       console.log("Match!");
       string = "Congrats! They match. Click another card to continue.";
+      cardOne.classList.toggle("matched");
+      cardTwo.classList.toggle("matched");
     } else {
       console.log("No match");
       string = "No match! Click another card to continue.";

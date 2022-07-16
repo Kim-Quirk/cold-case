@@ -331,6 +331,11 @@ color: var(--secondary-color);
 
 .hide {
   transform: rotateY(180deg);
+  pointer-events: none;
+}
+.matched{
+  opacity: 50%;
+  pointer-events: none;
 }
 .card {
   cursor: pointer;
