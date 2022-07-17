@@ -272,7 +272,7 @@ hr {
   margin-bottom: 1.5rem;
   z-index: 5;
   border: 2px solid var(--primary-color);
-  height: 22rem;
+  height: 21rem;
   transition: 0.5s ease;
 }
 
@@ -309,6 +309,7 @@ color: var(--secondary-color);
 
 #card-background {
   width: 180%;
+  height: 22rem;
 }
 
 .overlay {
@@ -331,6 +332,18 @@ color: var(--secondary-color);
 
 .hide {
   transform: rotateY(180deg);
+  pointer-events: none;
+}
+.matched{
+  opacity: 50%;
+  pointer-events: none;
+  transition: none;
+}
+.matched * {
+  transition: none;
+}
+.matched #card-background{
+  opacity: 0%;
 }
 .card {
   cursor: pointer;

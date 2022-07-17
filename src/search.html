@@ -51,10 +51,11 @@
         <button type="submit">Search</button>
       </form>
       <div class="case-files">
-        <div id="case">
-          <img src="./img/placeholder.png" />
+        <template id="case-template">
+        <div class="case">
+          <img id="profile" src="./img/placeholder.png" />
           <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
+            <h3><span id="#casetype">Unsolved Homicide</span>: <span id="victim-name">Jane Doe</span></h3>
             <p id="summary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -63,62 +64,12 @@
             </p>
             <h5 id="contact">
               If you have any information, please contact
-              <span>Website.com</span>
+              <span id="website">Website.com</span>
             </h5>
             <hr />
           </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png" />
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr />
-          </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png" />
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr />
-          </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png" />
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr />
-          </div>
-        </div>
+        </template>
+      </div>
       </div>
     </main>
     <!-- The footer is in the partials folder. -->
