@@ -23,8 +23,9 @@ document.forms["search"].addEventListener("submit", (e) => {
     }
     async init() {
       var list = await this.services.fetchJSON("cases");
+      console.log("init list", list);
       this.renderList(list);
-      return array;
+      return list;
     }
     
     prepareTemplate(template, info) {
