@@ -193,14 +193,27 @@ hr {
   max-width: 4rem;
   margin: 0 auto;
   justify-self: center;
+  border-radius: 10px;
 }
 
-.case h3, .case h2 {
+.case h2 {
   text-align: center;
 }
 
 #agency {
   font-weight: bolder;
+}
+
+.case {
+  background-color: var(--light-grey);
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.case:hover {
+  opacity: .8;
+  background-color: var(--bright-teal-color);
 }
 /* End search page styles */
 
@@ -217,21 +230,10 @@ hr {
   width: 100%;
   margin: 8px 0;
   justify-self: right;
+  align-self: right;
 }
 
-.search input[type=text] {
-  max-width: 9.2rem;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  /* display: inline-block; */
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-.search select, .search input[type=date] {
-  max-width: fit-content;
+.search select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -248,7 +250,7 @@ hr {
 .search {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
   flex-wrap: wrap;
 }
 
