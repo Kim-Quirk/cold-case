@@ -64,7 +64,6 @@ function checkCards() {
 export default class Cards {
   constructor(listElement) {
     this.listElement = listElement;
-    this.cases = new Cases;
     this.services = new ExternalServices();
   }
   async init() {
@@ -114,9 +113,7 @@ export default class Cards {
         console.log(info.num);
         playGame(card);
       });
-    template.querySelector("#question").addEventListener("click", () => {
-      window.location.href = "/search.html";
-    });
+    template.querySelector("#details-link").href += info.id;
     return template;
   }
   renderList(list) {

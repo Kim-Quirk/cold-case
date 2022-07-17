@@ -1,5 +1,6 @@
 import ExternalServices from "./externalServices.js";
 import { alertMessage, getLocalStorage } from "./utils.js";
+import Search from "./searchPage.js";
 
 export default class Cases {
     constructor() {
@@ -13,10 +14,26 @@ export default class Cases {
       console.log("cases", this.cases);
       return this.cases;
     }
-  async filter(caseName, type, status, date) {
-    console.log(caseName, type, status, date);
-  }
-  buildDetails() {
-    // Add code to direct/build details page
+  async filter(type, status) {
+    console.log(type, status);
+    const filteredType = this.cases.filter((info) => info.caseType == type);
+    console.log(filteredType);
+    const filteredStatus = this.cases.filter((info) => info.caseStatus == status);
+    console.log(filteredStatus);
+
+    var array;
+    if (filteredStatus.length != 0 && filteredType.length != 0) {
+      array = filteredStatus.filter(info => filteredType.includes(info));
+    } else if (filteredStatus.length != 0) {
+      array = filteredStatus;
+    } else if (filteredType.length != 0) {
+      array = filteredType;
+    } else {
+      array = this.cases;
+    }
+    console.log("did this work?", array);
+
+    const search = new Search(document.querySelector(".case-files"), array);
+    search.init();
   }
 }
