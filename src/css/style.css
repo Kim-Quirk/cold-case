@@ -185,18 +185,22 @@ hr {
   background-color: var(--secondary-color);
 }
 
-#case {
+.case {
   display: grid;
 }
 
-#case img {
+.case img {
   max-width: 4rem;
   margin: 0 auto;
   justify-self: center;
 }
 
-#case h3 {
+.case h3, .case h2 {
   text-align: center;
+}
+
+#agency {
+  font-weight: bolder;
 }
 /* End search page styles */
 

@@ -40,7 +40,9 @@ document.forms["search"].addEventListener("submit", (e) => {
       }
       
       template.querySelector("#summary").innerHTML = info.summarizedCaseDescription;
-      template.querySelector("#website").innerHTML = info.websiteUrl;
+      template.querySelector("#website").href = info.websiteUrl;
+      template.querySelector("#website").alt = info.agencyInformation;
+      template.querySelector("#agency").innerHTML = info.agencyInformation;
       return template;
     }
     renderList(list) {
