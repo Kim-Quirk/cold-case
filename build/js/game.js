@@ -1,1 +1,7 @@
-import{loadHeaderFooter as r}from"./utils.js";import o from"./cards.js";r();const e=new o(document.querySelector(".board"));e.init();
+import { loadHeaderFooter } from "./utils.js";
+import Card from "./cards.js";
+
+loadHeaderFooter();
+
+const cards = new Card(document.querySelector(".board"));
+cards.init();

@@ -1,43 +1,44 @@
-import Cases from "./cases.js";
 import { renderListWithTemplate } from "./utils.js";
 import ExternalServices from "./externalServices.js";
 var cardOne;
 var cardTwo;
 const startTime = Date.now();
-console.log(startTime);
+// console.log(startTime);
 
 function playGame(card) {
+  var picture;
+  var cardFront;
   if (cardOne === undefined) {
     cardOne = card;
-    console.log("Set the first card.");
-    var picture = card.querySelector(".overlay");
-    var cardFront = card.querySelector(".card_information")
+    // console.log("Set the first card.");
+    picture = card.querySelector(".overlay");
+    cardFront = card.querySelector(".card_information");
     picture.classList.toggle("hide");
     cardFront.classList.toggle("hide");
     card.classList.toggle("hide");
   } else if (cardTwo === undefined) {
     cardTwo = card;
-    console.log("Set the second card.");
-    var picture = card.querySelector(".overlay");
-    var cardFront = card.querySelector(".card_information")
+    // console.log("Set the second card.");
+    picture = card.querySelector(".overlay");
+    cardFront = card.querySelector(".card_information");
     picture.classList.toggle("hide");
     cardFront.classList.toggle("hide");
     card.classList.toggle("hide");
   } else {
-    console.log("Hide all cards.");
-    
+    // console.log("Hide all cards.");
+
     var allCards = document.querySelectorAll(".card");
     var allCardbacks = document.querySelectorAll(".overlay");
     var allFronts = document.querySelectorAll(".card_information");
     setTimeout(() => {
-      allCards.forEach((card) => {
-        card.classList.remove("hide");
+      allCards.forEach((item) => {
+        item.classList.remove("hide");
       });
-      allCardbacks.forEach((card) => {
-        card.classList.remove("hide");
+      allCardbacks.forEach((item) => {
+        item.classList.remove("hide");
       });
-      allFronts.forEach((card) => {
-        card.classList.remove("hide");
+      allFronts.forEach((item) => {
+        item.classList.remove("hide");
       });
     }, 300);
     cardOne = undefined;
@@ -51,21 +52,21 @@ function checkCards() {
   var string = "Click any card to reveal the other side.";
   if (cardOne != undefined && cardTwo != undefined) {
     if (cardOne.getAttribute("data-id") === cardTwo.getAttribute("data-id")) {
-      console.log("Match!");
+      // console.log("Match!");
       string = "Congrats! They match. Click another card to continue.";
       cardOne.classList.toggle("matched");
       cardTwo.classList.toggle("matched");
-      
-const cardCount = document.querySelectorAll('.matched').length;
-if(cardCount == 10){
-  const endTime = Date.now();
-  console.log(endTime);
-  var score = endTime-startTime;
-  score= Math.round((score/60000) *100) /100; 
-  string = `You Won!! It took you ${score} minutes.`;
-}
+
+      const cardCount = document.querySelectorAll(".matched").length;
+      if (cardCount == 10) {
+        const endTime = Date.now();
+        // console.log(endTime);
+        var score = endTime - startTime;
+        score = Math.round((score / 60000) * 100) / 100;
+        string = `You Won!! It took you ${score} minutes.`;
+      }
     } else {
-      console.log("No match");
+      // console.log("No match");
       string = "No match! Click another card to continue.";
     }
   }
@@ -84,23 +85,25 @@ export default class Cards {
     this.renderList(list);
   }
   shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex = array.length,
+      randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
       // Pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
+
       // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
-  
+
     return array;
   }
-  
+
   prepareTemplate(template, info) {
     template.querySelector("#case-name").innerHTML = info.caseName;
     template.querySelector("#victim-name").innerHTML = info.victimName;
@@ -111,8 +114,9 @@ export default class Cards {
     } else {
       template.querySelector("#profile").src = info.victimPicture;
     }
-    
-    template.querySelector(".summary").innerHTML = info.summarizedCaseDescription;
+
+    template.querySelector(".summary").innerHTML =
+      info.summarizedCaseDescription;
     template.querySelector("#website").innerHTML = info.websiteUrl;
     template.querySelector(".card").setAttribute("data-id", info.id);
     template.querySelector(".card").setAttribute("data-num", info.num);
@@ -121,7 +125,7 @@ export default class Cards {
       // This might need to change. It's looking for a unique id to reveal a card. If the matching cards have the same id, it may be a problem.
       .addEventListener("click", () => {
         var card = document.querySelector(`[data-num="${info.num}"]`);
-        console.log(info.num);
+        // console.log(info.num);
         playGame(card);
       });
     template.querySelector("#details-link").href += info.id;
@@ -129,7 +133,7 @@ export default class Cards {
   }
   renderList(list) {
     this.listElement.innerHTML = "";
-    console.log("list again?", list);
+    // console.log("list again?", list);
     const template = document.getElementById("card-template");
     renderListWithTemplate(
       template,

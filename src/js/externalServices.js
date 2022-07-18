@@ -12,15 +12,6 @@ async function convertToJson(res) {
 export default class ExternalServices {
   constructor() {}
   async fetchJSON(file) {
-    return await fetch(`./json/` + file + `.json`).then(convertToJson);
+    return await fetch("./json/" + file + ".json").then(convertToJson);
   }
-  // Unsure how to get this to work...
-  // saveJSON(file, data) {
-  //   const json = JSON.stringify(data);
-  //   try {
-  //     fs.writeFileSync(`./json/` + file + `.json`, json);
-  //     console.log("JSON data is saved.");
-  //   } catch (error) {
-  //     console.error(err);
-  //   }
 }

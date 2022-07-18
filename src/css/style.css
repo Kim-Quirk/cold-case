@@ -37,7 +37,7 @@
   align-items: center;
   justify-items: center;
   justify-content: space-between;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   color: var(--white);
   margin-top: 1rem;
 }
@@ -93,7 +93,7 @@ footer {
 }
 
 footer {
-   padding: 8px 16px;
+  padding: 8px 16px;
 }
 
 p.color1 {
@@ -117,7 +117,8 @@ a {
 }
 
 /* unvisited link */
-a:link, a:visited {
+a:link,
+a:visited {
   color: var(--tertiary-color);
 }
 
@@ -206,13 +207,13 @@ hr {
 
 .case {
   background-color: var(--light-grey);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .case:hover {
-  opacity: .8;
+  opacity: 0.8;
   background-color: var(--bright-teal-color);
 }
 /* End search page styles */
@@ -299,8 +300,8 @@ hr {
   font-size: 50%;
 }
 
-#case-name{
-color: var(--secondary-color);
+#case-name {
+  color: var(--secondary-color);
 }
 #profile {
   max-width: 75px;
@@ -340,7 +341,7 @@ color: var(--secondary-color);
   transform: rotateY(180deg);
   pointer-events: none;
 }
-.matched{
+.matched {
   opacity: 50%;
   pointer-events: none;
   transition: none;
@@ -348,7 +349,7 @@ color: var(--secondary-color);
 .matched * {
   transition: none;
 }
-.matched #card-background{
+.matched #card-background {
   opacity: 0%;
 }
 .card {
@@ -360,7 +361,7 @@ color: var(--secondary-color);
 /*Leaderboard Styles*/
 .scoreArea {
   display: block;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   /* text-align: center; */
 }
 
@@ -414,7 +415,9 @@ button:hover {
   cursor: pointer;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -450,7 +453,8 @@ input[type=text], input[type=password], input[type=email] {
   width: 100%;
 }
 
-.loginForm a:link, .loginForm a:visited {
+.loginForm a:link,
+.loginForm a:visited {
   color: var(--bright-blue-color);
 }
 
@@ -568,7 +572,7 @@ input[type=text], input[type=password], input[type=email] {
   }
 
   hr {
-   display: none;
+    display: none;
   }
 
   #case {
@@ -585,10 +589,11 @@ input[type=text], input[type=password], input[type=email] {
   /* Leaderboard styles */
   .scoreArea {
     display: flex;
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
     justify-content: center;
   }
-  td, th {
+  td,
+  th {
     text-align: center;
     padding: 0 1rem;
   }
@@ -601,7 +606,7 @@ input[type=text], input[type=password], input[type=email] {
     align-items: center;
     justify-items: center;
   }
-  
+
   .case-details img {
     max-width: 15rem;
   }

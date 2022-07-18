@@ -1,1 +1,7 @@
-import{loadHeaderFooter as o}from"./utils.js";import r from"./scores.js";o();const s=new r;s.init();
+import { loadHeaderFooter } from "./utils.js";
+import Scores from "./scores.js";
+
+loadHeaderFooter();
+
+const score = new Scores();
+score.init();

@@ -1,14 +1,46 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCC | Search Cold Cases</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/search.js" type="module"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&amp;family=Cinzel:wght@400;500;600;700;800&amp;family=Istok+Web&amp;family=Source+Sans+Pro&amp;family=Hind&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel:wght@400;500;600;700;800&family=Istok+Web&family=Source+Sans+Pro&family=Hind&display=swap"
+      rel="stylesheet"
+    />
+    <template id="case-template">
+      <div class="case">
+        <a id="details-link" href="/details.html?id=">
+          <h2 id="case-name">jane Doe</h2>
+          <img id="profile" src="./img/placeholder.png" />
+          <div id="case-info">
+            <h3>Victim Name: <span id="victim-name">Jane Doe</span></h3>
+            <h3>Case Type: <span id="case-type">Unsolved Homicide</span></h3>
+            <h3>
+              Case Status: <span id="case-status">Unsolved Homicide</span>
+            </h3>
+            <p id="summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+              <a href="details.html">Click here for more details.</a>
+            </p>
+            <p id="contact">
+              If you have any information, please contact
+              <a id="website" href="/"><span id="agency">Website.com</span></a>
+            </p>
+            <hr />
+          </div>
+        </a>
+      </div>
+    </template>
   </head>
 
   <body>
@@ -16,103 +48,40 @@
     <header class="divider" id="main-header"></header>
     <main>
       <h1>Cold Case Search</h1>
-      <br>
-      <h4>The following are various filter options to help you search through all the cold cases. Leave any option(s) blank and it will not be applied to your search.</h4>
+      <br />
+      <h4>
+        The following are various filter options to help you search through all
+        the cold cases. Leave any option(s) blank and it will not be applied to
+        your search.
+      </h4>
       <form class="search" name="search">
-        <label for="searchbar"></label>
-        <input type="text" name="searchbar" id="caseName" placeholder="Enter Case Name">
+        <!-- <label for="searchbar"></label>
+        <input
+          type="text"
+          name="searchbar"
+          id="caseName"
+          placeholder="Enter Case Name"
+        /> -->
         <label for="type"></label>
         <select id="type" name="type">
-          <option hidden="">Select Type</option>
+          <option hidden>Select Type</option>
           <option value="homicide">Homicide</option>
-          <option value="missing">Missing Person</option>
+          <option value="missing persons">Missing Person</option>
           <option value="all">Any type</option>
         </select>
         <label for="status"></label>
         <select id="status" name="status">
-          <option hidden="">Select Status</option>
+          <option hidden>Select Status</option>
           <option value="unsolved">Unsolved</option>
           <option value="solved">Solved</option>
           <option value="all">Any status</option>
         </select>
-        <label for="date"></label>
-        <input type="date" id="date" name="date">
-        
+
         <button type="submit">Search</button>
       </form>
-      <div class="case-files">
-        <div id="case">
-          <img src="./img/placeholder.png">
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. <a href="details.html">Click here for more details.</a>
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr>
-          </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png">
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr>
-          </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png">
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr>
-          </div>
-        </div>
-        <div id="case">
-          <img src="./img/placeholder.png">
-          <div id="case-info">
-            <h3>Unsolved Homicide: Jane Doe</h3>
-            <p id="summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <h5 id="contact">
-              If you have any information, please contact
-              <span>Website.com</span>
-            </h5>
-            <hr>
-          </div>
-        </div>
-      </div>
+      <div class="case-files"></div>
     </main>
     <!-- The footer is in the partials folder. -->
     <footer id="main-footer"></footer>
-  
-
-</body></html>
+  </body>
+</html>

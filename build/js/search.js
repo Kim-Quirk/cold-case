@@ -1,1 +1,21 @@
-import{loadHeaderFooter as r}from"./utils.js";import u from"./cases.js";r();const e=new u;e.init(),document.forms.search.addEventListener("submit",t=>{t.preventDefault();const s=document.querySelector("#caseName").value,o=document.querySelector("#type").value,a=document.querySelector("#status").value,c=document.querySelector("#date").value;e.filter(s,o,a,c)});
+import { loadHeaderFooter } from "./utils.js";
+import Cases from "./cases.js";
+import Search from "./searchPage.js";
+
+loadHeaderFooter();
+
+var cases = new Cases();
+// var list = await cases.init();
+var list = cases.init();
+
+document.forms["search"].addEventListener("submit", (e) => {
+  e.preventDefault();
+  // e.target would contain our form in this case
+  const type = document.querySelector("#type").value;
+  // const caseName = document.querySelector("#caseName").value;
+  const status = document.querySelector("#status").value;
+  list = cases.filter(type, status);
+});
+
+const search = new Search(document.querySelector(".case-files"), list);
+search.init();

@@ -1,38 +1,48 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCC | Case Details</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/details.js" type="module"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&amp;family=Cinzel:wght@400;500;600;700;800&amp;family=Istok+Web&amp;family=Source+Sans+Pro&amp;family=Hind&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel:wght@400;500;600;700;800&family=Istok+Web&family=Source+Sans+Pro&family=Hind&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <!-- The nav bar is in the partials folder. -->
     <header class="divider" id="main-header"></header>
-    <main>
-      <h1>Cold Case Details</h1>
-      <div class="case-details">
-      <img src="./img/placeholder.png">
-      <div>
-        <h2>Unsolved Homicide: John Doe</h2>
-        <p>
-          A summary of this case. This man was thought to be dead for 10 years.
-          It's unsolved because we don't know how he came back to life. He was
-          reported dead in Antlantis, Ocean on September 45th, 1895. If you see
-          this man, you should run. I mean, you should contatct the people
-          below.
-        </p>
-        <h4>OrganizationWebsite.org</h4>
-      </div>
-    </div>
+    <main class="details">
+      <h1 id="case-name">Cold Case Details</h1>
+      <img id="profile" src="./img/placeholder.png" />
+      <h3>Victim Name: <span id="victim-name">Jane Doe</span></h3>
+      <h3>Case Type: <span id="case-type">Unsolved Homicide</span></h3>
+      <h3>Case Status: <span id="case-status">Unsolved Homicide</span></h3>
+      <p id="summary">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p id="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <p id="contact">
+        If you have any information, please contact
+        <a id="website" href="/"><span id="agency">Website.com</span></a>
+      </p>
     </main>
     <!-- The footer is in the partials folder. -->
     <footer id="main-footer"></footer>
-  
-
-</body></html>
+  </body>
+</html>

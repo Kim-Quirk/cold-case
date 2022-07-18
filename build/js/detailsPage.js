@@ -1,4 +1,4 @@
-import Cases from "./cases";
+import Cases from "./cases.js";
 import { getParam } from "./utils.js";
 
 export default class Details {

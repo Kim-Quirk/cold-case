@@ -5,7 +5,8 @@ import Search from "./searchPage.js";
 loadHeaderFooter();
 
 var cases = new Cases();
-var list = await cases.init();
+// var list = await cases.init();
+var list = cases.init();
 
 document.forms["search"].addEventListener("submit", (e) => {
   e.preventDefault();

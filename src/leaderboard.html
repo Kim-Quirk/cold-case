@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCC | Game Leaderboard</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/leaderboard.js" type="module"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel:wght@400;500;600;700;800&family=Istok+Web&family=Source+Sans+Pro&family=Hind&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Cinzel:wght@400;500;600;700;800&family=Istok+Web&family=Source+Sans+Pro&family=Hind&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- The nav bar is in the partials folder. -->
-    <header class="divider" id="main-header">
-    </header>
+    <header class="divider" id="main-header"></header>
     <main>
-        <div class="scoreArea">
-
-            <section class="leaders">
-                <h1>Leaderboard</h1>
-                <table id="leaderboard">
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player</th>
-                        <th>Time (minutes)</th>
-                    </tr>
-                </table>
-            </section>
-            <section class="personalBests">
-                <h1>My High Scores</h1>
-                <ol class="highscores">
-                </ol>
-            </section>
-        </div>
+      <div class="scoreArea">
+        <section class="leaders">
+          <h1>Leaderboard</h1>
+          <table id="leaderboard">
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Time (minutes)</th>
+            </tr>
+          </table>
+        </section>
+        <section class="personalBests">
+          <h1>My High Scores</h1>
+          <ol class="highscores"></ol>
+        </section>
+      </div>
     </main>
     <footer id="main-footer"></footer>
-    </main>
-</body>
+  </body>
+</html>

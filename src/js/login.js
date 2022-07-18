@@ -16,13 +16,15 @@ if (window.location.href.indexOf("/login") > -1) {
     users.login(email, password);
   });
   if (getLocalStorage("verified") === true) {
-    alertMessage(`Login successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
+    alertMessage(
+      "Login successful! Welcome, " + getLocalStorage("user").nickname + "!"
+    );
   }
 }
 
 if (window.location.href.indexOf("/signup") > -1) {
   document.forms["signup"].addEventListener("submit", (e) => {
-    console.log("Sign up?");
+    // console.log("Sign up?");
     e.preventDefault();
     // e.target would contain our form in this case
     const name = document.querySelector("#name").value;
@@ -34,6 +36,8 @@ if (window.location.href.indexOf("/signup") > -1) {
     users.signup(name, nickname, email, password, repassword);
   });
   if (getLocalStorage("verified") === true) {
-    alertMessage(`Sign up successful! Welcome, ` + getLocalStorage("user").nickname + `!`);
+    alertMessage(
+      "Sign up successful! Welcome, " + getLocalStorage("user").nickname + "!"
+    );
   }
 }
