@@ -1,16 +1,16 @@
 [
   {
-    "score": 2.30,
+    "score": 2.3,
     "nickname": "Kim",
     "userid": 0
   },
   {
-    "score": 0.10,
+    "score": 0.1,
     "nickname": "Ali",
     "userid": 2
   },
   {
-    "score": 35.00,
+    "score": 35.0,
     "nickname": "Doey",
     "userid": 5
   },
@@ -30,12 +30,12 @@
     "userid": 1
   },
   {
-    "score": 5.50,
+    "score": 5.5,
     "nickname": "User",
     "userid": 1
   },
   {
-    "score": 4.50,
+    "score": 4.5,
     "nickname": "User",
     "userid": 1
   }

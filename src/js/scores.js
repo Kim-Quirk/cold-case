@@ -10,20 +10,20 @@ export default class Scores {
   async init() {
     var results = await this.services.fetchJSON("scores");
     this.scores = results;
-    console.log("scores", this.scores);
+    // console.log("scores", this.scores);
     this.sortScores();
   }
   sortScores() {
     this.scores.sort(function (a, b) {
       return a.score - b.score;
     });
-    console.log("sorted?", this.scores);
+    // console.log("sorted?", this.scores);
     this.updateLeaderboard();
     this.personalHighscores();
   }
   updateLeaderboard() {
     var parent = document.querySelector("#leaderboard");
-    console.log("Test??", this.scores);
+    // console.log("Test??", this.scores);
     for (var i = 0; i < 5; i++) {
       var tr = document.createElement("tr");
       var rank = i + 1;
@@ -44,11 +44,11 @@ export default class Scores {
   }
   personalHighscores() {
     if (getLocalStorage("verified") == true) {
-      console.log("Logged in!");
+      // console.log("Logged in!");
       document.querySelector(".personalBests").style.display = "block";
       var parent = document.querySelector(".highscores");
       var userScores = this.filterScores();
-      console.log(userScores);
+      // console.log(userScores);
       if (userScores.length != 0) {
         for (var i = 0; i < userScores.length && i < 6; i++) {
           var li = document.createElement("li");
@@ -56,21 +56,23 @@ export default class Scores {
             `
             <span class="score">` +
             userScores[i].score.toFixed(2) +
-            `</span><span id="delete" data-id="`+ i +`">X</span>
+            `</span><span id="delete" data-id="` +
+            i +
+            `">X</span>
             `;
           parent.append(li);
         }
         var del = document.querySelectorAll("#delete");
-        for (var i = 0; i < del.length; i++) {
-          del[i].addEventListener("click", () => {
-            this.deleteScores()
+        for (var x = 0; x < del.length; x++) {
+          del[x].addEventListener("click", () => {
+            this.deleteScores();
           });
         }
       } else {
         parent.innerHTML = `<p>Play a game of memory to see your personal high scores here!<p>`;
       }
     } else {
-      console.log("Not logged in!");
+      // console.log("Not logged in!");
     }
   }
   filterScores() {
@@ -81,6 +83,8 @@ export default class Scores {
     return userScores;
   }
   deleteScores() {
-   alertMessage("Pretend this worked. This would be implemented with access to a database. Deleting from JSON and updating JSON files is difficult   ):")
+    alertMessage(
+      "Pretend this worked. This would be implemented with access to a database. Deleting from JSON and updating JSON files is difficult   ):"
+    );
   }
 }

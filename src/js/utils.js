@@ -97,25 +97,25 @@ export async function loadHeaderFooter() {
 }
 
 export function updatedHeader() {
-  console.log(document.querySelector("#login"));
+  // console.log(document.querySelector("#login"));
   var account = document.querySelector("#login");
-  console.log(account);
+  // console.log(account);
   if (getLocalStorage("verified") === true) {
     account.textContent = "Logout";
     account.removeAttribute("href", "");
 
     var name = document.createElement("li");
     var user = getLocalStorage("user");
-    name.textContent = `Hi ` + user.nickname + `!`;
+    name.textContent = "Hi " + user.nickname + "!";
     name.setAttribute("id", "profileName");
-    
+
     var parent = document.querySelector(".nav");
     parent.appendChild(name);
     account.addEventListener("click", () => {
       setLocalStorage("user", undefined);
       setLocalStorage("verified", false);
       location.reload();
-    })
+    });
   }
 }
 

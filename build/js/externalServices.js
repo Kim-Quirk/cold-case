@@ -1,1 +1,17 @@
-var c=(s,n,o)=>new Promise((i,a)=>{var f=e=>{try{t(o.next(e))}catch(r){a(r)}},u=e=>{try{t(o.throw(e))}catch(r){a(r)}},t=e=>e.done?i(e.value):Promise.resolve(e.value).then(f,u);t((o=o.apply(s,n)).next())});function h(s){return c(this,null,function*(){const n=yield s.json();if(s.ok)return n;throw{name:"servicesError",message:n}})}export default class j{constructor(){}fetchJSON(n){return c(this,null,function*(){return yield fetch("./json/"+n+".json").then(h)})}}
+// const baseURL = "https://fp-matching-game.herokuapp.com/";
+
+async function convertToJson(res) {
+  const jsonResponse = await res.json();
+  if (res.ok) {
+    return jsonResponse;
+  } else {
+    throw { name: "servicesError", message: jsonResponse };
+  }
+}
+
+export default class ExternalServices {
+  constructor() {}
+  async fetchJSON(file) {
+    return await fetch("./json/" + file + ".json").then(convertToJson);
+  }
+}
