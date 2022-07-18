@@ -8,7 +8,7 @@ export default class Details {
     //   this.services = new ExternalServices();
   }
   async init() {
-    await this.findCase();
+      await this.findCase();   
   }
   async findCase() {
     var cases = await this.cases.init();

@@ -16,7 +16,7 @@
   --tertiary-color: #EF233C;
   --light-grey: #ae968d;
   --white: #faf7f7; */
-  /* colors */
+  /* colors *
   /* --primary-color: #0A0908;
   --secondary-color: #5E503F;
   --tertiary-color: #A9927D;
@@ -52,7 +52,12 @@ img {
 
 body {
   background-color: var(--white);
-  margin: 0;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
 }
 
 main {
@@ -61,7 +66,8 @@ main {
   margin: 0.3rem;
   font-family: var(--font-body);
   font-size: var(--font-base);
-  min-height: 73vh;
+  position: relative;
+  min-height: 71vh;
 }
 
 h1 {
@@ -94,6 +100,7 @@ footer {
 
 footer {
   padding: 8px 16px;
+  
 }
 
 p.color1 {
@@ -178,6 +185,7 @@ li a:hover:not(.active) {
   display: grid;
   grid-template-columns: 1fr;
   margin: 4rem 0.8rem;
+  grid-row-gap: 2rem;
 }
 
 hr {
@@ -261,7 +269,7 @@ hr {
 
 .board {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.1rem;
   align-items: center;
   justify-items: center;
@@ -272,14 +280,14 @@ hr {
 
 /* Card styles */
 .card {
-  max-width: 110px;
+  max-width: 10rem;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
   margin-bottom: 1.5rem;
   z-index: 5;
   border: 2px solid var(--primary-color);
-  height: 21rem;
+  height: 15rem;
   transition: 0.5s ease;
 }
 
@@ -490,8 +498,13 @@ input[type="email"] {
 
   /* Game board styles */
   .board {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0.2rem;
+  }
+
+  .card {
+    max-width: 12rem;
+    height: 21rem;
   }
 
   /* End Game board styles */
@@ -507,6 +520,10 @@ input[type="email"] {
 
   main {
     margin: 1rem;
+  }
+
+  main {
+    min-height: 82.9vh;
   }
 
   /* Game board styles */
@@ -543,7 +560,7 @@ input[type="email"] {
 
   /* Card styles */
   .card {
-    max-width: 12rem;
+    max-width: 13rem;
     padding: 0;
     font-size: 110%;
   }
