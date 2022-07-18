@@ -3,6 +3,8 @@ import { renderListWithTemplate } from "./utils.js";
 import ExternalServices from "./externalServices.js";
 var cardOne;
 var cardTwo;
+const startTime = Date.now();
+console.log(startTime);
 
 function playGame(card) {
   if (cardOne === undefined) {
@@ -53,6 +55,15 @@ function checkCards() {
       string = "Congrats! They match. Click another card to continue.";
       cardOne.classList.toggle("matched");
       cardTwo.classList.toggle("matched");
+      
+const cardCount = document.querySelectorAll('.matched').length;
+if(cardCount == 10){
+  const endTime = Date.now();
+  console.log(endTime);
+  var score = endTime-startTime;
+  score= Math.round((score/60000) *100) /100; 
+  string = `You Won!! It took you ${score} minutes.`;
+}
     } else {
       console.log("No match");
       string = "No match! Click another card to continue.";
